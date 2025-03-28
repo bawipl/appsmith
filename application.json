@@ -30,15 +30,19 @@
   "icon": "frame",
   "pages": [
     {
-      "id": "ALLLENT",
+      "id": "Main",
       "isDefault": true
     },
     {
-      "id": "AddNewContractP",
+      "id": "New Loan",
       "isDefault": false
     },
     {
       "id": "Currencies",
+      "isDefault": false
+    },
+    {
+      "id": "Stats",
       "isDefault": false
     }
   ],

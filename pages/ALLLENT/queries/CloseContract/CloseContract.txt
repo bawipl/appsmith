@@ -1,0 +1,5 @@
+UPDATE "public"."hodlhodllend" 
+SET "isfinished" = 'TRUE',
+"paybackdate" = '{{moment(CloseDatePicker.selectedDate).format("YYYY-MM-DD") }}',
+"isliquidated" = '{{IsLiquidatedCheckbox.isChecked}}'
+WHERE "ID" = {{ Contracts.selectedRow.ID }};

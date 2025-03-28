@@ -1,0 +1,47 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 7,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "775nzhlu4m",
+  "label": "Show finished",
+  "labelPosition": "Right",
+  "leftColumn": 21,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "onChange": "{{LendAll.run()}}",
+  "originalBottomRow": 7,
+  "originalTopRow": 3,
+  "parentColumnSpace": 20.0625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 28,
+  "topRow": 3,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "a1zfa9d8d6",
+  "widgetName": "SwitchFinished"
+}

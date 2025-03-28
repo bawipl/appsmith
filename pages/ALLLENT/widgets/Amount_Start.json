@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 99,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "bmzjrz44k3",
+  "leftColumn": 7,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 97,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 12,
+  "mobileTopRow": 93,
+  "needsErrorInfo": false,
+  "originalBottomRow": 99,
+  "originalTopRow": 95,
+  "overflow": "NONE",
+  "parentColumnSpace": 16.6875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 12,
+  "shouldTruncate": false,
+  "text": "{{ \n(() => {\n  // Calculate sum\n  const total = Contracts.filteredTableData\n    .reduce((sum, row) => sum + Number(row.amountstart), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 95,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "2vjthdu5ep",
+  "widgetName": "Amount_Start"
+}

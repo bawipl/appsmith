@@ -1,0 +1,30 @@
+INSERT INTO public."hodlhodllend" (
+  counterparty,
+  amountstart,
+  amountend,
+  contractdata,
+  startdate,
+  enddate,
+  currency,
+  "APR",
+  contact,
+  isfinished,
+  "owner",
+	platform,
+	"lendcontractID"
+)
+VALUES (
+	{{counterparty.text}},
+  {{amountstart.text}},
+	{{amountend.text}},
+	{{contractdata.text}},
+	{{moment(startdate.selectedDate).format("YYYY-MM-DD") }},
+	{{moment(enddate.selectedDate).format("YYYY-MM-DD")}},
+	(Select "ID" from public."currencies"  where shortcode = {{currency.selectedOptionValue}}),
+	{{parseFloat(APR.text)}},
+	{{contact.text}},
+	 FALSE,
+	 {{owner.selectedOptionLabel}},
+	 {{plaform.selectedOptionLabel}},
+  {{lendcontractID.text}}
+	)

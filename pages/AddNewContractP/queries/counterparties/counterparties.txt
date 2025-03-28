@@ -1,0 +1,5 @@
+SELECT DISTINCT ON (counterparty)
+    counterparty,
+    contact
+FROM public."hodlhodllend"
+ORDER BY counterparty, contact;

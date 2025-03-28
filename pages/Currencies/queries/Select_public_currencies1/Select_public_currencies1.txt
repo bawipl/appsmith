@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  public.currencies
+ORDER BY
+  "{{CurrenciesTable.sortOrder.column || 'ID'}}" {{CurrenciesTable.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{CurrenciesTable.pageSize}}
+OFFSET
+  {{CurrenciesTable.pageOffset}}

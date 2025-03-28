@@ -1,0 +1,22 @@
+SELECT 
+  h.counterparty,
+  h.amountstart::numeric AS amountstart,
+  h.amountend::numeric AS amountend,
+  h.contractdata,
+  h."ID",
+  h."lendcontractID",
+  h.startdate::date AS startdate,
+  h.enddate,
+  h."APR",
+  h.contact,
+  h.isfinished,
+  h.paybackdate,
+  h.isliquidated,
+  h.owner,
+  h.platform,
+  CCS.shortcode
+FROM public."hodlhodllend" AS h
+LEFT JOIN public.currencies AS CCS ON h.currency = CCS."ID"
+WHERE TRUE 
+{{ OwnerSelect.selectedOptionValue ? ` AND h.owner = '${OwnerSelect.selectedOptionValue}'` : '' }}
+{{ SwitchFinished.isSwitchedOn ? ` AND h.isfinished =  TRUE` : 'AND h.isfinished =  FALSE' }};

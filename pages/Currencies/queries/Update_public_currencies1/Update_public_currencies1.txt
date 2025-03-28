@@ -1,0 +1,1 @@
+UPDATE public.currencies SET "shortcode"= '{{CurrenciesTable.updatedRow.shortcode}}', "blockchain"= '{{CurrenciesTable.updatedRow.blockchain}}' WHERE "ID"= {{CurrenciesTable.updatedRow.ID}};

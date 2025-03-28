@@ -1,0 +1,1 @@
+INSERT INTO public.currencies ("shortcode","blockchain") VALUES ('{{(CurrenciesTable.newRow || {}).shortcode}}','{{(CurrenciesTable.newRow || {}).blockchain}}')

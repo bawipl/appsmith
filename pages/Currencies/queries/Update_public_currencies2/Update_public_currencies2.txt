@@ -1,0 +1,1 @@
+UPDATE public.currencies SET "shortcode"= '{{EditForm.formData.shortcode}}', "blockchain"= '{{EditForm.formData.blockchain}}' WHERE "ID"= {{CurrenciesTable.selectedRow.ID}};

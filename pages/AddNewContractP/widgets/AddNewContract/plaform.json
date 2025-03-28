@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 63,
+  "boxShadow": "none",
+  "defaultOptionValue": "hodlhodl",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "zjqft8vt9c",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Platform",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 23,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 63,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 56,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "parentColumnSpace": 17.2421875,
+  "parentId": "wojc9y9xnt",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 43,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"name\": \"debifi\",\n    \"code\": \"debifi\"\n  },\n\t {\n    \"name\": \"lendasat\",\n    \"code\": \"lendasat\"\n  },\n  {\n    \"name\": \"hodlhodl\",\n    \"code\": \"hodlhodl\"\n  }\n]",
+  "topRow": 56,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ev8ng7zp1l",
+  "widgetName": "plaform"
+}

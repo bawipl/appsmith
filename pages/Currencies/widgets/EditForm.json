@@ -120,9 +120,6 @@
       "key": "schema.__root_schema__.children.shortcode.accentColor"
     },
     {
-      "key": "schema.__root_schema__.children.shortcode.borderRadius"
-    },
-    {
       "key": "schema.__root_schema__.children.blockchain.defaultValue"
     },
     {
@@ -158,7 +155,7 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 25,
   "needsErrorInfo": false,
-  "onSubmit": "{{Update_public_currencies2.run(() => {\n            showAlert(\"Successfully updated! Refresh the table to see updates\");\n            \n          }, () => {\n            showAlert(\"Unable to save!\");\n          })}}",
+  "onSubmit": "{{Update_public_currencies2.run(() => {\n  showAlert('Successfully updated!', 'success');\n  Select_public_currencies1.run();\n}, () => {\n  showAlert(\"Unable to save!\");\n});}}",
   "originalBottomRow": 77,
   "originalTopRow": 43,
   "parentColumnSpace": 22.0625,
@@ -204,13 +201,14 @@
         "shortcode": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(EditForm.sourceData, EditForm.formData, EditForm.fieldState)}}",
           "accessor": "shortcode",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(EditForm.sourceData, EditForm.formData, EditForm.fieldState)}}",
+          "borderRadius": "0px",
           "boxShadow": "none",
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.shortcode))(EditForm.sourceData, EditForm.formData, EditForm.fieldState)}}",
           "fieldType": "Text Input",
           "iconAlign": "left",
+          "iconName": "dollar",
           "identifier": "shortcode",
           "isCustomField": false,
           "isDisabled": false,
@@ -222,7 +220,8 @@
           "maxChars": "5",
           "originalIdentifier": "shortcode",
           "position": 0,
-          "sourceData": "USDTT"
+          "sourceData": "USDTT",
+          "tooltip": "max 5 letters"
         }
       },
       "dataType": "object",

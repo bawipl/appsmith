@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 62,
+  "bottomRow": 63,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -31,13 +31,11 @@
     }
   },
   "columnOrder": [
-    "Payback_date",
-    "Profit"
+    "average_APY",
+    "owner"
   ],
-  "columnUpdatedAt": 1743182630465,
-  "columnWidthMap": {
-    "paybackdate": 232
-  },
+  "columnUpdatedAt": 1743269216172,
+  "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -60,18 +58,15 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.Profit.computedValue"
+      "key": "primaryColumns.average_APY.computedValue"
     },
     {
-      "key": "primaryColumns.Payback_date.computedValue"
+      "key": "primaryColumns.owner.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.Payback_date.outputFormat"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -84,35 +79,34 @@
   "isVisible": true,
   "isVisibleDownload": true,
   "isVisibleFilters": false,
-  "isVisiblePagination": true,
-  "isVisibleSearch": true,
-  "key": "ai647xkmy4",
+  "isVisiblePagination": false,
+  "isVisibleSearch": false,
+  "key": "8tzex96rio",
   "label": "Data",
-  "leftColumn": 1,
+  "leftColumn": 30,
   "minWidth": 450,
-  "mobileBottomRow": 39,
-  "mobileLeftColumn": 6,
-  "mobileRightColumn": 40,
-  "mobileTopRow": 11,
+  "mobileBottomRow": 63,
+  "mobileLeftColumn": 28,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 35,
   "needsErrorInfo": false,
-  "parentColumnSpace": 22.0625,
+  "parentColumnSpace": 20.21875,
   "parentId": "0",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "Payback_date": {
-      "alias": "Payback date",
+    "average_APY": {
+      "alias": "average APY",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "date",
-      "computedValue": "{{Profits.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Payback date\"]))}}",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"average APY\"]))}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "Payback_date",
-      "index": 1,
-      "inputFormat": "YYYY-MM-DDTHH:mm:ss.SSSZ",
+      "id": "average_APY",
+      "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -121,10 +115,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Payback date",
+      "label": "average APY",
       "notation": "standard",
-      "originalId": "Payback date",
-      "outputFormat": "MMM YYYY",
+      "originalId": "average APY",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -132,18 +125,18 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "Profit": {
-      "alias": "Profit",
+    "owner": {
+      "alias": "owner",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{Profits.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Profit\"]))}}",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"owner\"]))}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "Profit",
+      "id": "owner",
       "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -153,10 +146,10 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Profit",
+      "label": "owner",
       "notation": "standard",
-      "originalId": "Profit",
-      "sticky": "right",
+      "originalId": "owner",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -166,16 +159,15 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 25,
+  "rightColumn": 44,
   "searchKey": "",
-  "showInlineEditingOptionDropdown": true,
-  "tableData": "{{ProfitsQuery.data}}",
+  "tableData": "{{averageAPY.data}}",
   "textSize": "0.875rem",
-  "topRow": 2,
+  "topRow": 35,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "a1wkvvv3ed",
-  "widgetName": "Profits"
+  "widgetId": "xyvd3qlx0p",
+  "widgetName": "Table1"
 }

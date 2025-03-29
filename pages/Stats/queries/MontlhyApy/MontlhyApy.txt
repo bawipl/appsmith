@@ -1,0 +1,19 @@
+SELECT 
+  DATE_TRUNC('month', h.paybackdate) AS paybackdate,
+  SUM(h."APY" * h."Profit" * h.duration / 365.0)::float 
+  / NULLIF(SUM(h."Profit" * h.duration / 365.0), 0) AS "Average APY"
+FROM (
+  SELECT 
+    hh.amountend::numeric - hh.amountstart::numeric AS "Profit",
+    hh.amountstart::numeric,
+    hh.paybackdate,
+    (hh.paybackdate - hh.startdate) AS duration,
+    ((hh.amountend::numeric - hh.amountstart::numeric) / NULLIF(hh.amountstart::numeric, 0)) * 100 * 365 
+    / NULLIF((hh.paybackdate - hh.startdate), 0) AS "APY"
+  FROM public.hodlhodllend hh
+  WHERE hh.isfinished = TRUE
+) h
+GROUP BY DATE_TRUNC('month', h.paybackdate)
+ORDER BY DATE_TRUNC('month', h.paybackdate) ASC;
+
+

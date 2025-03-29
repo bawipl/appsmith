@@ -1,0 +1,10 @@
+SELECT 
+  c."shortcode" AS "shortcode",
+  h.currency,
+	c."blockchain" AS "blockchain",
+  SUM(h.amountend::numeric) AS sum
+FROM public.hodlhodllend h
+LEFT JOIN public.currencies c ON h.currency = c."ID"
+WHERE h.isfinished IS NULL OR h.isfinished = FALSE
+GROUP BY c."shortcode", h.currency,c."blockchain"
+ORDER BY c."shortcode" ASC;

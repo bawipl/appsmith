@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  DATE_TRUNC('month', h.paybackdate) AS paybackdate,\n  SUM(h.\"APY\" * h.\"Profit\" * h.duration / 365.0)::float \n  / NULLIF(SUM(h.\"Profit\" * h.duration / 365.0), 0) AS \"Average APY\"\nFROM (\n  SELECT \n    hh.amountend::numeric - hh.amountstart::numeric AS \"Profit\",\n    hh.amountstart::numeric,\n    hh.paybackdate,\n    (hh.paybackdate - hh.startdate) AS duration,\n    ((hh.amountend::numeric - hh.amountstart::numeric) / NULLIF(hh.amountstart::numeric, 0)) * 100 * 365 \n    / NULLIF((hh.paybackdate - hh.startdate), 0) AS \"APY\"\n  FROM public.hodlhodllend hh\n  WHERE hh.isfinished = TRUE\n) h\nGROUP BY DATE_TRUNC('month', h.paybackdate)\nORDER BY DATE_TRUNC('month', h.paybackdate) ASC;\n\n\n",
+      "body": "SELECT \n  DATE_TRUNC('month', h.paybackdate) AS paybackdate,\n  SUM(h.\"APY\" * h.\"Profit\" * h.duration / 365.0)::float \n  / NULLIF(SUM(h.\"Profit\" * h.duration / 365.0), 0) AS \"AverageAPY\"\nFROM (\n  SELECT \n    hh.amountend::numeric - hh.amountstart::numeric AS \"Profit\",\n    hh.amountstart::numeric,\n    hh.paybackdate,\n    (hh.paybackdate - hh.startdate) AS duration,\n    ((hh.amountend::numeric - hh.amountstart::numeric) / NULLIF(hh.amountstart::numeric, 0)) * 100 * 365 \n    / NULLIF((hh.paybackdate - hh.startdate), 0) AS \"APY\"\n  FROM public.hodlhodllend hh\n  WHERE hh.isfinished = TRUE\n) h\nGROUP BY DATE_TRUNC('month', h.paybackdate)\nORDER BY DATE_TRUNC('month', h.paybackdate) ASC;\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,7 +23,7 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "MontlhyApy",
     "pageId": "Stats",
     "userSetOnLoad": false

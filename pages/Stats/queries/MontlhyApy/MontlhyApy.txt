@@ -1,7 +1,7 @@
 SELECT 
   DATE_TRUNC('month', h.paybackdate) AS paybackdate,
   SUM(h."APY" * h."Profit" * h.duration / 365.0)::float 
-  / NULLIF(SUM(h."Profit" * h.duration / 365.0), 0) AS "Average APY"
+  / NULLIF(SUM(h."Profit" * h.duration / 365.0), 0) AS "AverageAPY"
 FROM (
   SELECT 
     hh.amountend::numeric - hh.amountstart::numeric AS "Profit",

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE \"public\".\"hodlhodllend\" \nSET \"enddate\" = '{{ moment(Contracts.updatedRow.enddate).format(\"YYYY-MM-DD\") }}',\n\"contact\" = '{{Contracts.updatedRow.contact}}'\nWHERE \"ID\" = {{ Contracts.updatedRow.ID }};",
+      "body": "UPDATE \"public\".\"hodlhodllend\" \nSET \"enddate\" = '{{ moment(Contracts.updatedRow.enddate).format(\"YYYY-MM-DD\") }}',\n\"startdate\" = '{{ moment(Contracts.updatedRow.startdate).format(\"YYYY-MM-DD\") }}',\n\"contact\" = '{{Contracts.updatedRow.contact}}'\nWHERE \"ID\" = {{ Contracts.updatedRow.ID }};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,0 +1,10 @@
+SELECT 
+  h.enddate,
+  SUM(h.amountend::numeric) AS daily_sum,
+  SUM(SUM(h.amountend::numeric)) OVER (ORDER BY h.enddate) AS cumulative_sum
+FROM public.hodlhodllend h
+LEFT JOIN public.currencies c ON h.currency = c."ID"
+WHERE h.isfinished IS NULL OR h.isfinished = FALSE
+GROUP BY h.enddate
+ORDER BY h.enddate ASC;
+

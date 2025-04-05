@@ -5,10 +5,9 @@ export default {
 		const start = new Date(startdate.selectedDate);
 		const end = new Date(enddate.selectedDate);
 		const dayDiff = (end - start) / (1000 * 60 * 60 * 24);
-
 		amountend.setValue(
-			amountstart.text * (1+APR.text/100) * (dayDiff / 365)
-		);
+  parseFloat(amountstart.text) + parseFloat(amountstart.text) * (parseFloat(APR.text) / 100) * (parseFloat(dayDiff) / 365)
+);
 
 	}
 }

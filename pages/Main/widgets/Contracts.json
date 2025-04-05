@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 93,
+  "bottomRow": 96,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "cellBackground": "",
@@ -33,6 +33,7 @@
     }
   },
   "columnOrder": [
+    "customColumn1",
     "counterparty",
     "amountstart",
     "amountend",
@@ -42,22 +43,23 @@
     "APR",
     "contact",
     "owner",
-    "isfinished",
     "platform",
     "shortcode",
     "contractdata",
-    "ID",
     "isliquidated",
     "paybackdate",
+    "isfinished",
+    "ID",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1743175973139,
+  "columnUpdatedAt": 1743892240324,
   "columnWidthMap": {
     "APR": 69,
     "amountend": 100,
     "amountstart": 134,
     "contact": 192,
-    "counterparty": 122,
+    "counterparty": 129,
+    "customColumn1": 60,
     "enddate": 112,
     "paybackdate": 432,
     "platform": 116,
@@ -151,6 +153,24 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.counterparty.menuButtonLabel"
+    },
+    {
+      "key": "primaryColumns.counterparty.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.lendcontractID.displayText"
     }
   ],
   "dynamicPropertyPathList": [
@@ -176,6 +196,15 @@
   "dynamicTriggerPathList": [
     {
       "key": "primaryColumns.EditActions1.onSave"
+    },
+    {
+      "key": "primaryColumns.counterparty.onClick"
+    },
+    {
+      "key": "onRowSelected"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -198,8 +227,9 @@
   "mobileRightColumn": 9,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 93,
-  "originalTopRow": 8,
+  "onRowSelected": "",
+  "originalBottomRow": 94,
+  "originalTopRow": 9,
   "parentColumnSpace": 20.0625,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -266,7 +296,7 @@
       "isVisible": true,
       "label": "Save / Discard",
       "notation": "standard",
-      "onSave": "{{update.run()}}",
+      "onSave": "{{update.run().then(() => {\n  RefreshData.ContractsprimaryColumnsEditActions1onSave();\n});}}",
       "originalId": "EditActions1",
       "saveActionLabel": "Save",
       "saveBorderRadius": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
@@ -441,10 +471,22 @@
       "alias": "counterparty",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "buttonLabel": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"counterparty\"]))}}",
       "cellBackground": "{{Contracts.processedTableData.map((currentRow, currentIndex) => (  currentRow.platform === \"hodlhodl\" ? \"#28a745\" : currentRow.platform === \"debifi\" ? \"#ffc107\" : \"#dc3545\" ))}}",
       "columnType": "text",
       "computedValue": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"counterparty\"]))}}",
+      "configureMenuItems": {
+        "config": {
+          "id": "config",
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Menu Item"
+        },
+        "id": "config",
+        "label": "Configure menu items"
+      },
       "currencyCode": "USD",
+      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
@@ -460,8 +502,53 @@
       "isSaveVisible": true,
       "isVisible": true,
       "label": "counterparty",
+      "menuButtonLabel": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"counterparty\"]))}}",
+      "menuItemsSource": "STATIC",
       "notation": "standard",
+      "onClick": "{{FilterCounterparty.ContractsprimaryColumnscounterpartyonClick();}}",
       "originalId": "counterparty",
+      "selectOptions": "\n",
+      "sourceData": [],
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn1": {
+      "alias": "A",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "cellBackground": "",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "selection",
+      "id": "customColumn1",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "A",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{FilterCounterparty.toggleCounterpartyFilter();}}",
+      "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -572,10 +659,11 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"lendcontractID\"]))}}",
+      "columnType": "url",
+      "computedValue": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( \n  currentRow.platform === \"hodlhodl\"\n    ? \"https://lend.hodlhodl.com/contracts/\" + currentRow.lendcontractID\n    : currentRow.platform === \"debifi\"\n      ? \"https://debifi.com/contracts/\" + currentRow.lendcontractID\n      : \"\"\n))}}",
       "currencyCode": "USD",
       "decimals": 0,
+      "displayText": "{{Contracts.processedTableData.map((currentRow, currentIndex) => (  currentRow.lendcontractID ))}}",
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
@@ -613,12 +701,12 @@
       "horizontalAlignment": "LEFT",
       "id": "owner",
       "index": 13,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "owner",
@@ -765,7 +853,7 @@
   "rightColumn": 59,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{LendAll.data}}",
+  "tableData": "{{ appsmith.store.filteredContracts || LendAll.data }}",
   "textSize": "0.875rem",
   "topRow": 8,
   "totalRecordsCount": 0,

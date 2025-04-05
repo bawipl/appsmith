@@ -31,7 +31,7 @@
   "mobileTopRow": 2,
   "needsErrorInfo": false,
   "onChange": "{{LendAll.run()}}",
-  "originalBottomRow": 7,
+  "originalBottomRow": 8,
   "originalTopRow": 3,
   "parentColumnSpace": 20.0625,
   "parentId": "0",

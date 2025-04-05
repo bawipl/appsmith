@@ -1,5 +1,6 @@
 UPDATE "public"."hodlhodllend" 
 SET "enddate" = '{{ moment(Contracts.updatedRow.enddate).format("YYYY-MM-DD") }}',
 "startdate" = '{{ moment(Contracts.updatedRow.startdate).format("YYYY-MM-DD") }}',
-"contact" = '{{Contracts.updatedRow.contact}}'
+"contact" = '{{Contracts.updatedRow.contact}}',
+"owner" = '{{Contracts.updatedRow.owner}}'
 WHERE "ID" = {{ Contracts.updatedRow.ID }};

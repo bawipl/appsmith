@@ -4,13 +4,16 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 63,
   "boxShadow": "none",
-  "defaultOptionValue": "hodlhodl",
+  "defaultOptionValue": "1",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -40,8 +43,8 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 56,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
+  "optionLabel": "label",
+  "optionValue": "value",
   "parentColumnSpace": 17.2421875,
   "parentId": "wojc9y9xnt",
   "parentRowSpace": 10,
@@ -50,7 +53,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 43,
   "serverSideFiltering": false,
-  "sourceData": "[\n  {\n    \"name\": \"debifi\",\n    \"code\": \"debifi\"\n  },\n\t {\n    \"name\": \"lendasat\",\n    \"code\": \"lendasat\"\n  },\n  {\n    \"name\": \"hodlhodl\",\n    \"code\": \"hodlhodl\"\n  }\n]",
+  "sourceData": "{{platforms.data.map( (obj) =>{ return  {'label': obj.name, 'value': obj.id } })}}",
   "topRow": 56,
   "type": "SELECT_WIDGET",
   "version": 1,

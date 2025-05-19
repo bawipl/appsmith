@@ -1,0 +1,2 @@
+DELETE FROM public."platforms"
+  WHERE "id" = {{data_table.triggeredRow.id}};

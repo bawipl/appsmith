@@ -44,6 +44,10 @@
     {
       "id": "Stats",
       "isDefault": false
+    },
+    {
+      "id": "Platforms",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

@@ -1,0 +1,6 @@
+INSERT INTO public."platforms" (
+	"name",
+	"description")
+VALUES (
+	'{{insert_form.formData.name}}',
+	'{{insert_form.formData.description}}');

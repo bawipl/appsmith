@@ -1,0 +1,2 @@
+DELETE FROM public."owner_financial_summary_by_currency_platform_summed"
+  WHERE "owner" = {{data_table.triggeredRow.owner}};

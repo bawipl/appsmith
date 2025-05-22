@@ -1,0 +1,30 @@
+INSERT INTO public."cashoperations_view" (
+	"id",
+	"direction",
+	"owner_id",
+	"owner_description",
+	"date",
+	"platform_id",
+	"platform_name",
+	"platform_address",
+	"currency_id",
+	"currency",
+	"amount",
+	"fee",
+	"description"
+)
+VALUES (
+	'{{insert_form.formData.id}}',
+	'{{insert_form.formData.direction}}',
+	'{{insert_form.formData.owner_id}}',
+	'{{insert_form.formData.owner_description}}',
+	'{{insert_form.formData.date}}',
+	'{{insert_form.formData.platform_id}}',
+	'{{insert_form.formData.platform_name}}',
+	'{{insert_form.formData.platform_address}}',
+	'{{insert_form.formData.currency_id}}',
+	'{{insert_form.formData.currency}}',
+	'{{insert_form.formData.amount}}',
+	'{{insert_form.formData.fee}}',
+	'{{insert_form.formData.description}}'
+);

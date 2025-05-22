@@ -1,0 +1,14 @@
+UPDATE public."cashoperations_view" SET
+		"direction" = '{{update_form.fieldState.direction.isVisible ? update_form.formData.direction : update_form.sourceData.direction}}',
+		"owner_id" = '{{update_form.fieldState.owner_id.isVisible ? update_form.formData.owner_id : update_form.sourceData.owner_id}}',
+    "owner_description" = '{{update_form.fieldState.owner_description.isVisible ? update_form.formData.owner_description : update_form.sourceData.owner_description}}',
+		"date" = '{{update_form.fieldState.date.isVisible ? update_form.formData.date : update_form.sourceData.date}}',
+		"platform_id" = '{{update_form.fieldState.platform_id.isVisible ? update_form.formData.platform_id : update_form.sourceData.platform_id}}',
+		"platform_name" = '{{update_form.fieldState.platform_name.isVisible ? update_form.formData.platform_name : update_form.sourceData.platform_name}}',
+		"platform_address" = '{{update_form.fieldState.platform_address.isVisible ? update_form.formData.platform_address : update_form.sourceData.platform_address}}',
+		"currency_id" = '{{update_form.fieldState.currency_id.isVisible ? update_form.formData.currency_id : update_form.sourceData.currency_id}}',
+		"currency" = '{{update_form.fieldState.currency.isVisible ? update_form.formData.currency : update_form.sourceData.currency}}',
+		"amount" = '{{update_form.fieldState.amount.isVisible ? update_form.formData.amount : update_form.sourceData.amount}}',
+		"fee" = '{{update_form.fieldState.fee.isVisible ? update_form.formData.fee : update_form.sourceData.fee}}',
+		"description" = {{update_form.formData.description}}
+	WHERE "id" = {{data_table.selectedRow.id}} and "direction" = {{data_table.selectedRow.direction}};

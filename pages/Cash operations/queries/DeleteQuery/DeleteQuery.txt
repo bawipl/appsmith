@@ -1,0 +1,2 @@
+DELETE FROM public."cashoperations_view"
+  WHERE "id" = {{data_table.triggeredRow.id}};

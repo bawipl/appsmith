@@ -1,0 +1,8 @@
+INSERT INTO public."owner" (
+	"owner",
+	"description",
+	"active")
+VALUES (
+	'{{insert_form.formData.owner}}',
+	'{{insert_form.formData.description}}',
+	'{{insert_form.formData.active}}');

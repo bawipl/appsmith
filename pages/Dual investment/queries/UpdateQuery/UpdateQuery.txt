@@ -1,0 +1,13 @@
+UPDATE public."dualinvestmentview" SET
+		"platform" = '{{update_form.fieldState.platform.isVisible ? update_form.formData.platform : update_form.sourceData.platform}}',
+		"apr" = '{{update_form.fieldState.apr.isVisible ? update_form.formData.apr : update_form.sourceData.apr}}',
+    "expirationtime" = '{{update_form.fieldState.expirationtime.isVisible ? update_form.formData.expirationtime : update_form.sourceData.expirationtime}}',
+		"targetprice" = '{{update_form.fieldState.targetprice.isVisible ? update_form.formData.targetprice : update_form.sourceData.targetprice}}',
+		"termrate" = '{{update_form.fieldState.termrate.isVisible ? update_form.formData.termrate : update_form.sourceData.termrate}}',
+		"subscribtionamount" = '{{update_form.fieldState.subscribtionamount.isVisible ? update_form.formData.subscribtionamount : update_form.sourceData.subscribtionamount}}',
+		"product" = '{{update_form.fieldState.product.isVisible ? update_form.formData.product : update_form.sourceData.product}}',
+		"currencyin" = '{{update_form.fieldState.currencyin.isVisible ? update_form.formData.currencyin : update_form.sourceData.currencyin}}',
+		"currencyout" = '{{update_form.fieldState.currencyout.isVisible ? update_form.formData.currencyout : update_form.sourceData.currencyout}}',
+		"interestccin" = '{{update_form.fieldState.interestccin.isVisible ? update_form.formData.interestccin : update_form.sourceData.interestccin}}',
+		"interestccout" = '{{update_form.fieldState.interestccout.isVisible ? update_form.formData.interestccout : update_form.sourceData.interestccout}}'
+	WHERE "id" = {{data_table.selectedRow.id}};

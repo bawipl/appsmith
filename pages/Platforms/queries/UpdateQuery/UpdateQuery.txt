@@ -1,4 +1,6 @@
 UPDATE public."platforms" SET
 		"name" = '{{update_form.fieldState.name.isVisible ? update_form.formData.name : update_form.sourceData.name}}',
-		"description" = '{{update_form.fieldState.description.isVisible ? update_form.formData.description : update_form.sourceData.description}}'
+		"description" = '{{update_form.fieldState.description.isVisible ? update_form.formData.description : update_form.sourceData.description}}',
+    "isexchange" = '{{update_form.fieldState.isexchange.isVisible ? update_form.formData.isexchange : update_form.sourceData.isexchange}}',
+		"address" = '{{update_form.fieldState.address.isVisible ? update_form.formData.address : update_form.sourceData.address}}'
 WHERE "id" = {{data_table.selectedRow.id}};

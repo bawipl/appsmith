@@ -34,7 +34,19 @@
       "isDefault": true
     },
     {
+      "id": "Stats",
+      "isDefault": false
+    },
+    {
+      "id": "Cash operations",
+      "isDefault": false
+    },
+    {
       "id": "New Loan",
+      "isDefault": false
+    },
+    {
+      "id": "Dual investment",
       "isDefault": false
     },
     {
@@ -42,11 +54,15 @@
       "isDefault": false
     },
     {
-      "id": "Stats",
+      "id": "Platforms",
       "isDefault": false
     },
     {
-      "id": "Platforms",
+      "id": "Public.owner",
+      "isDefault": false
+    },
+    {
+      "id": "Finnacial Summary",
       "isDefault": false
     }
   ],

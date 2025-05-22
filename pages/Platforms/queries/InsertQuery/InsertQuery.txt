@@ -1,6 +1,10 @@
 INSERT INTO public."platforms" (
 	"name",
-	"description")
+	"description",
+	"isexchange",
+	"address")
 VALUES (
 	'{{insert_form.formData.name}}',
-	'{{insert_form.formData.description}}');
+	'{{insert_form.formData.description}}',
+	'{{insert_form.formData.isexchange}}',
+	'{{insert_form.formData.address}}');

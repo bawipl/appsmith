@@ -1,0 +1,18 @@
+INSERT INTO public."owner_financial_summary_by_currency_platform_summed" (
+	"owner",
+	"platform",
+	"currency",
+	"cash_balance",
+	"total_lending_amountstart",
+	"total_lending_amountend",
+	"fx_rate",
+	"total_usd")
+VALUES (
+	'{{insert_form.formData.owner}}',
+	'{{insert_form.formData.platform}}',
+	'{{insert_form.formData.currency}}',
+	'{{insert_form.formData.cash_balance}}',
+	'{{insert_form.formData.total_lending_amountstart}}',
+	'{{insert_form.formData.total_lending_amountend}}',
+	'{{insert_form.formData.fx_rate}}',
+	'{{insert_form.formData.total_usd}}');

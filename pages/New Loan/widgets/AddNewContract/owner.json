@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 63,
+  "bottomRow": 62,
   "boxShadow": "none",
   "defaultOptionValue": "BART",
   "dynamicBindingPathList": [
@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -40,8 +43,8 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 56,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
+  "optionLabel": "label",
+  "optionValue": "value",
   "parentColumnSpace": 17.2421875,
   "parentId": "wojc9y9xnt",
   "parentRowSpace": 10,
@@ -50,7 +53,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 22,
   "serverSideFiltering": false,
-  "sourceData": "[\n  {\n    \"name\": \"BART\",\n    \"code\": \"BART\"\n  },\n  {\n    \"name\": \"IMAC\",\n    \"code\": \"IMAC\"\n  },\n  {\n    \"name\": \"PVA\",\n    \"code\": \"PVA\"\n  },\n  {\n    \"name\": \"ELA\",\n    \"code\": \"ELA\"\n  }\n]",
+  "sourceData": "{{QueryOwner.data.map( (obj) =>{ return  {'label': obj.owner, 'value': obj.owner } })}}",
   "topRow": 56,
   "type": "SELECT_WIDGET",
   "version": 1,

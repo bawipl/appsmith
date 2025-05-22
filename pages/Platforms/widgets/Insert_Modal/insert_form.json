@@ -129,6 +129,21 @@
     },
     {
       "key": "schema.__root_schema__.children.description.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.isexchange.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.isexchange.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.address.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.address.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.address.accentColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -138,6 +153,9 @@
     },
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.isexchange.defaultValue"
     }
   ],
   "dynamicTriggerPathList": [
@@ -177,6 +195,27 @@
       "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
       "cellBoxShadow": "none",
       "children": {
+        "address": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "accessor": "address",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.address))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "address",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Address",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "address",
+          "position": 3
+        },
         "description": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
           "accessor": "description",
@@ -197,7 +236,27 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "description",
           "position": 1,
-          "sourceData": "Bartek hodldhold"
+          "sourceData": "external account"
+        },
+        "isexchange": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "accessor": "isexchange",
+          "alignWidget": "LEFT",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "boolean",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.isexchange))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "fieldType": "Switch",
+          "identifier": "isexchange",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Isexchange",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "isexchange",
+          "position": 2,
+          "sourceData": true
         },
         "name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
@@ -219,7 +278,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "name",
           "position": 0,
-          "sourceData": "hodlhodl"
+          "sourceData": "ext"
         }
       },
       "dataType": "object",

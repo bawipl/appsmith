@@ -25,6 +25,8 @@
     "id",
     "name",
     "description",
+    "isexchange",
+    "address",
     "customColumn1"
   ],
   "columnSizeMap": {
@@ -32,7 +34,7 @@
     "step": 62,
     "task": 245
   },
-  "columnUpdatedAt": 1747644812199,
+  "columnUpdatedAt": 1747724567262,
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": "0",
   "delimiter": ",",
@@ -92,6 +94,12 @@
     },
     {
       "key": "primaryColumns.description.computedValue"
+    },
+    {
+      "key": "primaryColumns.isexchange.computedValue"
+    },
+    {
+      "key": "primaryColumns.address.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -140,6 +148,40 @@
   "parentRowSpace": 10,
   "primaryColumnId": "id",
   "primaryColumns": {
+    "address": {
+      "alias": "address",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"address\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "address",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "address",
+      "notation": "standard",
+      "originalId": "address",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "customColumn1": {
       "borderRadius": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
       "boxShadow": "none",
@@ -224,6 +266,40 @@
       "label": "id",
       "notation": "standard",
       "originalId": "id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "isexchange": {
+      "alias": "isexchange",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "checkbox",
+      "computedValue": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"isexchange\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "isexchange",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "isexchange",
+      "notation": "standard",
+      "originalId": "isexchange",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

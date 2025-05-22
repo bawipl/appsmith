@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "67a2400b3e12e107acd1a186_8f98e5ce-eaba-4e08-80a4-3b12a9ff3780",
+  "gitSyncId": "67a2400b3e12e107acd1a186_76555dd7-c0e4-49e2-88e3-870cbcca30ce",
   "id": "Platforms_InsertQuery",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO public.\"platforms\" (\n\t\"name\",\n\t\"description\")\nVALUES (\n\t'{{insert_form.formData.name}}',\n\t'{{insert_form.formData.description}}');",
+      "body": "INSERT INTO public.\"platforms\" (\n\t\"name\",\n\t\"description\",\n\t\"isexchange\",\n\t\"address\")\nVALUES (\n\t'{{insert_form.formData.name}}',\n\t'{{insert_form.formData.description}}',\n\t'{{insert_form.formData.isexchange}}',\n\t'{{insert_form.formData.address}}');",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

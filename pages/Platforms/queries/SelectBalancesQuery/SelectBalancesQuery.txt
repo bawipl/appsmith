@@ -1,0 +1,3 @@
+SELECT * FROM public."platform_currency_balance" 
+WHERE platform_name <> 'aux'
+OFFSET {{(data_table.pageNo - 1) * data_table.pageSize}};

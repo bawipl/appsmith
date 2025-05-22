@@ -1,0 +1,1 @@
+SELECT * FROM public.platforms order by public.platforms.name;

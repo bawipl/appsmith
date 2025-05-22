@@ -1,0 +1,29 @@
+INSERT INTO public."dualinvestmentview" (
+  "id",
+  "platform",
+  "apr",
+  "expirationtime",
+  "targetprice",
+  "termrate",
+  "subscribtionamount",
+  "product",
+  "currencyin",
+  "currencyout",
+  "interestccin",
+  "interestccout"
+)
+VALUES (
+  {{insert_form.formData.id && insert_form.formData.id !== '' ? insert_form.formData.id : null}},
+  {{insert_form.formData.platform && insert_form.formData.platform !== '' ? insert_form.formData.platform : null}},
+  {{insert_form.formData.apr && insert_form.formData.apr !== '' ? insert_form.formData.apr : null}},
+  {{insert_form.formData.expirationtime && insert_form.formData.expirationtime !== '' ? insert_form.formData.expirationtime : null}},
+  {{insert_form.formData.targetprice && insert_form.formData.targetprice !== '' ? insert_form.formData.targetprice : null}},
+  {{insert_form.formData.termrate && insert_form.formData.termrate !== '' ? insert_form.formData.termrate : null}},
+  {{insert_form.formData.subscribtionamount && insert_form.formData.subscribtionamount !== '' ? insert_form.formData.subscribtionamount : null}},
+  {{insert_form.formData.product && insert_form.formData.product !== '' ? insert_form.formData.product : null}},
+  {{insert_form.formData.currencyin && insert_form.formData.currencyin !== '' ? insert_form.formData.currencyin : null}},
+  {{insert_form.formData.currencyout && insert_form.formData.currencyout !== '' ? insert_form.formData.currencyout : null}},
+  {{insert_form.formData.interestccin && insert_form.formData.interestccin !== '' ? insert_form.formData.interestccin : null}},
+  {{insert_form.formData.interestccout && insert_form.formData.interestccout !== '' ? insert_form.formData.interestccout : null}}
+);
+

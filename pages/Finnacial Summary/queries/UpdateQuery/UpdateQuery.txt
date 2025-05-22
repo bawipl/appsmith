@@ -1,0 +1,9 @@
+UPDATE public."owner_financial_summary_by_currency_platform_summed" SET
+		"platform" = '{{update_form.fieldState.platform.isVisible ? update_form.formData.platform : update_form.sourceData.platform}}',
+		"currency" = '{{update_form.fieldState.currency.isVisible ? update_form.formData.currency : update_form.sourceData.currency}}',
+    "cash_balance" = '{{update_form.fieldState.cash_balance.isVisible ? update_form.formData.cash_balance : update_form.sourceData.cash_balance}}',
+		"total_lending_amountstart" = '{{update_form.fieldState.total_lending_amountstart.isVisible ? update_form.formData.total_lending_amountstart : update_form.sourceData.total_lending_amountstart}}',
+		"total_lending_amountend" = '{{update_form.fieldState.total_lending_amountend.isVisible ? update_form.formData.total_lending_amountend : update_form.sourceData.total_lending_amountend}}',
+		"fx_rate" = '{{update_form.fieldState.fx_rate.isVisible ? update_form.formData.fx_rate : update_form.sourceData.fx_rate}}',
+		"total_usd" = '{{update_form.fieldState.total_usd.isVisible ? update_form.formData.total_usd : update_form.sourceData.total_usd}}'
+WHERE "owner" = {{data_table.selectedRow.owner}};

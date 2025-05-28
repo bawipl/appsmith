@@ -7,7 +7,6 @@
   "closeOnSelection": true,
   "dateFormat": "YYYY-MM-DD HH:mm",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "2025-02-06T15:03:57.663Z",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -17,11 +16,12 @@
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": true,
   "isVisible": true,
   "key": "bejr0gz38l",
   "label": "Start date",

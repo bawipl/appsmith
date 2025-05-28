@@ -1,7 +1,0 @@
-SELECT "source"."enddate" AS "enddate", SUM("source"."amountend"::numeric) AS "sum"
-FROM (SELECT "public"."hodlhodllend"."amountend"::numeric AS "amountend", "public"."hodlhodllend"."contractdata" AS "contractdata", "public"."hodlhodllend"."amountstart"::numeric AS "amountstart", "public"."hodlhodllend"."counterparty" AS "counterparty", "public"."hodlhodllend"."startdate" AS "startdate", "public"."hodlhodllend"."contact" AS "contact", "public"."hodlhodllend"."enddate" AS "enddate", "public"."hodlhodllend"."currency" AS "currency", "public"."hodlhodllend"."APR" AS "APR", "public"."hodlhodllend"."isfinished" AS "isfinished", "public"."hodlhodllend"."lendcontractID" AS "lendcontractID", "public"."hodlhodllend"."paybackdate" AS "paybackdate", "public"."hodlhodllend"."isliquidated" AS "isliquidated", "public"."hodlhodllend"."owner" AS "owner", "public"."hodlhodllend"."platform" AS "platform", "currencies__via__currency"."shortcode" AS "currencies__via__currency__shortcode" FROM "public"."hodlhodllend"
-LEFT JOIN "public"."currencies" AS "currencies__via__currency" ON "public"."hodlhodllend"."currency" = "currencies__via__currency"."ID"
-WHERE ("public"."hodlhodllend"."isfinished" IS NULL)
-    OR ("public"."hodlhodllend"."isfinished" = FALSE)) AS "source"
-GROUP BY "source"."enddate"
-ORDER BY "source"."enddate" ASC

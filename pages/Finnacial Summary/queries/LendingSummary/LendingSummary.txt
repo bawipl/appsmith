@@ -1,0 +1,31 @@
+SELECT
+ 
+  p.name AS platform,
+  SUM(l.amountstart::numeric) AS total_amountstart,
+  SUM(l.amountend::numeric) AS total_amountend,
+  SUM(
+    COALESCE((
+      SELECT SUM(cop.amount)
+      FROM cashoperations cop
+      WHERE cop.operation_group = l.operation_group
+        AND cop.direction = 'in'
+    ), 0)
+  ) AS total_repaid,
+  SUM(l.amountstart::numeric - COALESCE((
+      SELECT SUM(cop.amount)
+      FROM cashoperations cop
+      WHERE cop.operation_group = l.operation_group
+        AND cop.direction = 'in'
+    ), 0)) AS total_amountstart_remaining,
+  SUM(l.amountend::numeric - COALESCE((
+      SELECT SUM(cop.amount)
+      FROM cashoperations cop
+      WHERE cop.operation_group = l.operation_group
+        AND cop.direction = 'in'
+    ), 0)) AS total_amountend_remaining
+FROM lendingevents l
+JOIN currencies c ON c."ID" = l.currency
+JOIN platforms p ON p.id = l.platform
+WHERE l.owner = {{OwnerSelect.selectedOptionValue}} AND NOT l.isfinished
+GROUP BY  p.name
+ORDER BY p.name;

@@ -31,7 +31,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 33,
   "needsErrorInfo": false,
-  "onClick": "{{InsertNewContract.run().then(() => {\n  navigateTo('ALLLENT', {}, 'SAME_WINDOW');\n});}}",
+  "onClick": "{{InsertNewContract.run().then(() => {\n  navigateTo('Main', {}, 'SAME_WINDOW');\n});}}",
   "parentId": "wojc9y9xnt",
   "placement": "CENTER",
   "recaptchaType": "V3",

@@ -1,6 +1,6 @@
 SELECT 
 TO_CHAR(SUM(h.amountstart::numeric * h."APR") / SUM(h.amountstart::numeric), 'FM999.9') || '%' AS "average APY",
   h.owner
-FROM public.hodlhodllend h
+FROM public.lendingevents h
 LEFT JOIN public.currencies c ON h.currency = c."ID"
 GROUP BY h.owner;

@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 126,
+  "bottomRow": 177,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -38,10 +38,9 @@
     "blockchain",
     "cash_balance",
     "lending_balance",
-    "total_balance",
-    "total_balance_usd"
+    "total_balance"
   ],
-  "columnUpdatedAt": 1747864543548,
+  "columnUpdatedAt": 1748284091368,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -87,9 +86,6 @@
     },
     {
       "key": "primaryColumns.total_balance.computedValue"
-    },
-    {
-      "key": "primaryColumns.total_balance_usd.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -118,6 +114,8 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 87,
   "needsErrorInfo": false,
+  "originalBottomRow": 126,
+  "originalTopRow": 87,
   "parentColumnSpace": 20.0625,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -363,37 +361,6 @@
       "label": "total_balance",
       "notation": "standard",
       "originalId": "total_balance",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "total_balance_usd": {
-      "alias": "total_balance_usd",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"total_balance_usd\"]))}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "total_balance_usd",
-      "index": 8,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "total_balance_usd",
-      "notation": "standard",
-      "originalId": "total_balance_usd",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,

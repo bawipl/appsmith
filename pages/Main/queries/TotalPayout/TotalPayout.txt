@@ -1,0 +1,10 @@
+SELECT 
+  COALESCE((
+    SELECT SUM(amount)
+    FROM cashoperations
+    WHERE direction = 'out'
+  
+      
+      AND operation_group = {{Contracts.selectedRow.operation_group}}::uuid
+   
+  ), 0) AS total_payout;

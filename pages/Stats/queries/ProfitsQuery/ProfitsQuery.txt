@@ -1,7 +1,7 @@
 SELECT 
   DATE_TRUNC('month', h.paybackdate) AS "Payback date",
   SUM(h.amountend::numeric) - SUM(h.amountstart::numeric) AS "Profit"
-FROM public.hodlhodllend h
+FROM public.lendingevents h
 LEFT JOIN public.currencies c ON h.currency = c."ID"
 WHERE h.isfinished = TRUE
 GROUP BY DATE_TRUNC('month', h.paybackdate)

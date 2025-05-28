@@ -1,0 +1,51 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 33,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "17ab7tuq8c",
+  "leftColumn": 48,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{InsertPaybackOperation.run().then(() => {\n  closeModal(RegisterPaybackModal.name);\n});}}",
+  "originalBottomRow": 33,
+  "originalTopRow": 29,
+  "parentId": "z0qrwafwf1",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 61,
+  "text": "Confirm",
+  "topRow": 29,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "s8jdg3zt4u",
+  "widgetName": "Button5"
+}

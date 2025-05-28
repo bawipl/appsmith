@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "bmzjrz44k3",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 97,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 12,
+  "mobileTopRow": 93,
+  "needsErrorInfo": false,
+  "originalBottomRow": 211,
+  "originalTopRow": 207,
+  "overflow": "NONE",
+  "parentColumnSpace": 16.6875,
+  "parentId": "59rw5mx0bq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 12,
+  "shouldTruncate": false,
+  "text": "{{ \n(() => {\n  // Calculate sum\n   total = CashSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.usd_value), 0);\n\n\t total =  total + LendingSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.total_amountend_remaining), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return \"Total future NAV \" + total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 4,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "fbjflyhynr",
+  "widgetName": "Amount_StartCopyCopyCopy"
+}

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  c.\"shortcode\" AS \"shortcode\",\n  h.currency,\n\tc.\"blockchain\" AS \"blockchain\",\n  SUM(h.amountend::numeric) AS sum\nFROM public.hodlhodllend h\nLEFT JOIN public.currencies c ON h.currency = c.\"ID\"\nWHERE h.isfinished IS NULL OR h.isfinished = FALSE\nGROUP BY c.\"shortcode\", h.currency,c.\"blockchain\"\nORDER BY c.\"shortcode\" ASC;\n",
+      "body": "SELECT \n  c.\"shortcode\" AS \"shortcode\",\n  h.currency,\n\tc.\"blockchain\" AS \"blockchain\",\n  SUM(h.amountend::numeric) AS sum\nFROM public.lendingevents h\nLEFT JOIN public.currencies c ON h.currency = c.\"ID\"\nWHERE h.isfinished IS NULL OR h.isfinished = FALSE\nGROUP BY c.\"shortcode\", h.currency,c.\"blockchain\"\nORDER BY c.\"shortcode\" ASC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

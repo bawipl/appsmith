@@ -22,11 +22,15 @@
       "key": "sourceData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": true,
   "isVisible": true,
   "key": "zjqft8vt9c",
   "labelAlignment": "left",
@@ -43,8 +47,9 @@
   "mobileRightColumn": 11,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
+  "onOptionChange": "{{platformbalances.run()}}",
   "optionLabel": "label",
-  "optionValue": "label",
+  "optionValue": "value",
   "parentColumnSpace": 17.2421875,
   "parentId": "wojc9y9xnt",
   "parentRowSpace": 10,

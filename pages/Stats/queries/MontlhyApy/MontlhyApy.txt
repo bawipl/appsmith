@@ -10,7 +10,7 @@ FROM (
     (hh.paybackdate - hh.startdate) AS duration,
     ((hh.amountend::numeric - hh.amountstart::numeric) / NULLIF(hh.amountstart::numeric, 0)) * 100 * 365 
     / NULLIF((hh.paybackdate - hh.startdate), 0) AS "APY"
-  FROM public.hodlhodllend hh
+  FROM public.lendingevents hh
   WHERE hh.isfinished = TRUE
 ) h
 GROUP BY DATE_TRUNC('month', h.paybackdate)

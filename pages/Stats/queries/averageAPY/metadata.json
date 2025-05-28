@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \nTO_CHAR(SUM(h.amountstart::numeric * h.\"APR\") / SUM(h.amountstart::numeric), 'FM999.9') || '%' AS \"average APY\",\n  h.owner\nFROM public.hodlhodllend h\nLEFT JOIN public.currencies c ON h.currency = c.\"ID\"\nGROUP BY h.owner;\n",
+      "body": "SELECT \nTO_CHAR(SUM(h.amountstart::numeric * h.\"APR\") / SUM(h.amountstart::numeric), 'FM999.9') || '%' AS \"average APY\",\n  h.owner\nFROM public.lendingevents h\nLEFT JOIN public.currencies c ON h.currency = c.\"ID\"\nGROUP BY h.owner;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

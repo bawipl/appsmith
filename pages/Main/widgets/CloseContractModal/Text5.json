@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "4fz7ez4kzy",
+  "leftColumn": 4,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.9375,
+  "parentId": "djpbks0mtz",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 37,
+  "shouldTruncate": false,
+  "text": "{{ TotalPayout.data[0]?.total_payout - Contracts.selectedRow?.amountend === 0 \n  ? \"Contract fully repaid\" \n  : \"Remaining to be repaid: \" + (Contracts.selectedRow?.amountend - TotalPayout.data[0]?.total_payout) \n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 5,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "oe0kmv5kcx",
+  "widgetName": "Text5"
+}

@@ -1,0 +1,15 @@
+SELECT 
+  date, 
+  amount, 
+  cashoperations.description, 
+  platforms.name
+FROM 
+  cashoperations 
+LEFT JOIN 
+  platforms 
+ON 
+  cashoperations.platform_id = platforms.id
+WHERE 
+  direction = 'in'
+  AND operation_group = {{Contracts.selectedRow.operation_group}}::uuid;
+

@@ -1,0 +1,64 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 23,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "nbv0xcrmm6",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Destination",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 14,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 23,
+  "originalTopRow": 16,
+  "parentColumnSpace": 9.6875,
+  "parentId": "z0qrwafwf1",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 49,
+  "serverSideFiltering": false,
+  "sourceData": "{{AllWallets.data.map( (obj) =>{ return  {'label': obj.name+ ' '+ obj.address, 'value': obj.id } })}}",
+  "topRow": 16,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "6jx2qetlks",
+  "widgetName": "Paybackplatform"
+}

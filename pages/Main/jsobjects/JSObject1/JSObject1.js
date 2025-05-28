@@ -1,12 +1,16 @@
 export default {
-	myVar1: [],
-	myVar2: {},
-	myFun1 () {
-		//	write code here
-		//	this.myVar1 = [1,2,3]
-	},
-	async myFun2 () {
-		//	use async-await or promises
-		//	await storeValue('varName', 'hello world')
+	
+	async repaymentstring () {
+  const total = TotalPayout.data[0]?.total_payout || 0;
+  const expected = Contracts.selectedRow?.amountend || 0;
+  const diff = expected - total;
+
+  return diff === 0
+    ? "Contract fully repaid"
+    : `Remaining to be repaid: ${diff}`;
+   },
+	
+	async setClosedate () {
+		CloseDatePicker.setValue(moment())
 	}
 }

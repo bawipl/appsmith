@@ -1,0 +1,4 @@
+SELECT * FROM public."platform_currency_balance" 
+WHERE 
+currency = {{currency.selectedOptionLabel}}
+and cash_balance >0

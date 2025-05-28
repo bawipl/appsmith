@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "pdzvsirmwo",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentId": "z0qrwafwf1",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 58,
+  "shouldTruncate": false,
+  "text": "Register {{Contracts.selectedRow.platform}} payback of {{Contracts.selectedRow.lendcontractID}} to {{Contracts.selectedRow.owner}} ",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "axkfiv1tay",
+  "widgetName": "Text4"
+}

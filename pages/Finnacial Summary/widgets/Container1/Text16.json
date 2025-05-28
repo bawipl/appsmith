@@ -1,6 +1,6 @@
 {
   "borderRadius": "0px",
-  "bottomRow": 5,
+  "bottomRow": 4,
   "boxShadow": "none",
   "dynamicBindingPathList": [
     {
@@ -27,11 +27,11 @@
   "parentColumnSpace": 11.78515625,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
-  "rightColumn": 54,
-  "text": "Finnancial Summary",
+  "rightColumn": 16,
+  "text": "Finnancial Summary for: ",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 1,
+  "topRow": 0,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "urzv99hdc8",

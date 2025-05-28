@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"currencies\" ;",
+      "body": "SELECT\n    p.\"ID\",\n    p.shortcode,\n    pc.cash_balance\nFROM\n    public.\"currencies\" AS p\nLEFT JOIN\n    public.\"platform_currency_balance\" pc\n    ON pc.currency = p.shortcode\nWHERE\n    pc.platform_name = {{appsmith.store.platformname}}\n    AND pc.cash_balance IS NOT NULL;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "WieczorekAssets",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "executeOnLoad": true,
     "name": "CurrencyQuery",
     "pageId": "Cash operations",

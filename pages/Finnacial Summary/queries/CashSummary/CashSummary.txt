@@ -1,0 +1,13 @@
+SELECT
+  p.name AS platform,
+  c.shortcode AS currency,
+  SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) AS cash_balance,
+  COALESCE(r.rate_to_usd, 0) AS rate_to_usd,
+  SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) * COALESCE(r.rate_to_usd, 0) AS usd_value
+FROM cashoperations co
+JOIN currencies c ON c."ID" = co.currency_id
+JOIN platforms p ON p.id = co.platform_id
+LEFT JOIN fx_rates r ON r.currency_id = c."ID"
+WHERE co.owner_id = {{OwnerSelect.selectedOptionValue}}
+GROUP BY p.name, c.shortcode, r.rate_to_usd
+ORDER BY p.name, c.shortcode;

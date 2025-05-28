@@ -1,30 +1,68 @@
-INSERT INTO public."hodlhodllend" (
-  counterparty,
-  amountstart,
-  amountend,
-  contractdata,
-  startdate,
-  enddate,
-  currency,
-  "APR",
-  contact,
-  isfinished,
-  "owner",
-	platform,
-	"lendcontractID"
+WITH
+generated_id AS (
+  SELECT nextval('cashoperations_id_seq') AS id
+),
+operation_group AS (
+  SELECT gen_random_uuid() AS group_id
+),
+new_loan AS (
+  INSERT INTO public.lendingevents (
+    counterparty, amountstart, amountend, contractdata,
+    startdate, enddate, currency, "APR", contact,
+    isfinished, "owner", platform, "lendcontractID", operation_group
+  )
+  VALUES (
+    {{counterparty.text}},
+    {{amountstart.text}}::money,
+    {{amountend.text}}::money,
+    {{contractdata.text}},
+    {{moment(startdate.selectedDate).format("YYYY-MM-DD") }},
+    {{moment(enddate.selectedDate).format("YYYY-MM-DD")}},
+    {{currency.selectedOptionValue}},
+    {{parseFloat(APR.text)}},
+    {{contact.text}},
+    FALSE,
+    {{owner.selectedOptionLabel}}::char(5),
+    {{plaform.selectedOptionValue}}::INTEGER,
+    {{lendcontractID.text}},
+    (SELECT group_id FROM operation_group)
+  )
+  RETURNING amountstart, currency, platform, "owner"
+),
+insert_cash_out AS (
+  INSERT INTO cashoperations (
+    id, direction, owner_id, date,
+    platform_id, currency_id, amount,
+    fee, description, operation_group
+  )
+  SELECT
+    generated_id.id,
+    'out',
+    new_loan."owner",
+    CURRENT_TIMESTAMP,
+    (Select "id" from public.platforms where name = {{Source.selectedOptionValue}}),
+	 {{currency.selectedOptionValue}},
+    (new_loan.amountstart::text)::double precision,
+    0,
+    {{currency.selectedOptionLabel}} || ' Loan issued on ' || {{plaform.selectedOptionLabel}},
+    (SELECT group_id FROM operation_group)
+  FROM new_loan, generated_id
+  RETURNING *
 )
-VALUES (
-	{{counterparty.text}},
-  {{amountstart.text}},
-	{{amountend.text}},
-	{{contractdata.text}},
-	{{moment(startdate.selectedDate).format("YYYY-MM-DD") }},
-	{{moment(enddate.selectedDate).format("YYYY-MM-DD")}},
-	(Select "ID" from public."currencies"  where shortcode = {{currency.selectedOptionValue}}),
-	{{parseFloat(APR.text)}},
-	{{contact.text}},
-	 FALSE,
-	 {{owner.selectedOptionLabel}},
-	 {{plaform.selectedOptionLabel}},
-  {{lendcontractID.text}}
-	)
+INSERT INTO cashoperations (
+  id, direction, owner_id, date,
+  platform_id, currency_id, amount,
+  fee, description, operation_group
+)
+SELECT
+  generated_id.id,
+  'in',
+  'EXT',
+  CURRENT_TIMESTAMP,
+  {{plaform.selectedOptionValue}}::INTEGER,
+	 {{currency.selectedOptionValue}},
+  (new_loan.amountstart::text)::double precision,
+  0,
+  'Counterparty ' || {{counterparty.text}} || ' receives loan',
+  (SELECT group_id FROM operation_group)
+FROM new_loan, generated_id;

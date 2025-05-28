@@ -251,6 +251,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.platform_name.onOptionChange"
     }
   ],
   "fieldLimitExceeded": false,
@@ -324,7 +327,7 @@
           "isVisible": true,
           "label": "Currency",
           "labelTextSize": "0.875rem",
-          "options": "{{CurrencyQuery.data.map( (obj) =>{ return  {'label': obj.shortcode, 'value': obj.shortcode } })}}",
+          "options": "{{CurrencyQuery.data.map( (obj) =>{ return  {'label': obj.shortcode + ' Max '+ obj.cash_balance, 'value': obj.shortcode } })}}",
           "originalIdentifier": "currency",
           "position": 9,
           "serverSideFiltering": false,
@@ -566,6 +569,7 @@
           "isVisible": true,
           "label": "Platform Name",
           "labelTextSize": "0.875rem",
+          "onOptionChange": "{{helper.setplaformname(insert_form.formData.platform_name);}}",
           "options": "{{PlatformsQuery.data.map( (obj) =>{ return  {'label': obj.name, 'value': obj.name } })}}",
           "originalIdentifier": "platform_name",
           "position": 6,

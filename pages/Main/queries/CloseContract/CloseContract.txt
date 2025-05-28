@@ -1,4 +1,4 @@
-UPDATE "public"."hodlhodllend" 
+UPDATE "public"."lendingevents" 
 SET "isfinished" = 'TRUE',
 "paybackdate" = '{{moment(CloseDatePicker.selectedDate).format("YYYY-MM-DD") }}',
 "isliquidated" = '{{IsLiquidatedCheckbox.isChecked}}'

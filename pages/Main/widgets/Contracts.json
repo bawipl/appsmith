@@ -50,9 +50,10 @@
     "paybackdate",
     "isfinished",
     "ID",
+    "operation_group",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1743892240324,
+  "columnUpdatedAt": 1748328232599,
   "columnWidthMap": {
     "APR": 133,
     "amountend": 118,
@@ -191,6 +192,9 @@
     },
     {
       "key": "primaryColumns.APR.cellBackground"
+    },
+    {
+      "key": "primaryColumns.operation_group.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -262,7 +266,7 @@
   "mobileRightColumn": 9,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "onRowSelected": "",
+  "onRowSelected": "{{RepayOperationsQuery.run()}}",
   "originalBottomRow": 97,
   "originalTopRow": 8,
   "parentColumnSpace": 20.0625,
@@ -717,6 +721,40 @@
       "notation": "standard",
       "originalId": "lendcontractID",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "operation_group": {
+      "alias": "operation_group",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Contracts.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"operation_group\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "operation_group",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "operation_group",
+      "notation": "standard",
+      "originalId": "operation_group",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

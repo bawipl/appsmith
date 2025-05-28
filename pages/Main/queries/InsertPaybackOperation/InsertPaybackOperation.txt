@@ -1,0 +1,51 @@
+WITH
+generated_id AS (
+  SELECT nextval('cashoperations_id_seq') AS id
+),
+loan_context AS (
+  SELECT
+    operation_group,
+    "owner",
+    platform AS platform_id,
+    currency AS currency_id
+  FROM lendingevents
+  WHERE operation_group = '{{Contracts.selectedRow.operation_group}}'
+  LIMIT 1
+),
+insert_payback_in AS (
+  INSERT INTO cashoperations (
+    id, direction, owner_id, date,
+    platform_id, currency_id, amount,
+    fee, description, operation_group
+  )
+  SELECT
+    generated_id.id,
+    'in',
+    loan_context."owner",
+    CURRENT_TIMESTAMP,
+    {{Paybackplatform.selectedOptionValue}},
+    loan_context.currency_id,
+    {{PaybackAmount.text}},
+    0,
+    'Payback received from '||{{Contracts.selectedRow.platform}},
+    loan_context.operation_group
+  FROM loan_context, generated_id
+  RETURNING *
+)
+INSERT INTO cashoperations (
+  id, direction, owner_id, date,
+  platform_id, currency_id, amount,
+  fee, description, operation_group
+)
+SELECT
+  generated_id.id,
+  'out',
+  'EXT',
+  CURRENT_TIMESTAMP,
+  loan_context.platform_id,
+  loan_context.currency_id,
+  {{PaybackAmount.text}}::DOUBLE PRECISION,
+  0,
+  'Payback forwarded',
+  loan_context.operation_group
+FROM loan_context, generated_id;

@@ -325,7 +325,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "amount",
           "position": 10,
-          "sourceData": 1
+          "sourceData": 500
         },
         "currency": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -344,7 +344,7 @@
           "isVisible": true,
           "label": "Currency",
           "labelTextSize": "0.875rem",
-          "options": "{{CurrencyQuery.data.map( (obj) =>{ return  {'label': obj.shortcode, 'value': obj.shortcode } })}}",
+          "options": "{{AllCurrenciesQuery.data.map( (obj) =>{ return  {'label': obj.shortcode, 'value': obj.shortcode } })}}",
           "originalIdentifier": "currency",
           "position": 9,
           "serverSideFiltering": false,
@@ -370,7 +370,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "currency_id",
           "position": 8,
-          "sourceData": 12
+          "sourceData": 1
         },
         "date": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -457,7 +457,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "fee",
           "position": 11,
-          "sourceData": 8.0E-5
+          "sourceData": 0
         },
         "id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -479,7 +479,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "id",
           "position": 0,
-          "sourceData": 19
+          "sourceData": 61
         },
         "owner_description": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -566,7 +566,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "platform_id",
           "position": 5,
-          "sourceData": 5
+          "sourceData": 14
         },
         "platform_name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",

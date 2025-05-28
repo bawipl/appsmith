@@ -1,22 +1,24 @@
 SELECT 
-  h.counterparty,
-  h.amountstart::numeric AS amountstart,
-  h.amountend::numeric AS amountend,
-  h.contractdata,
-  h."ID",
-  h."lendcontractID",
-  h.startdate::date AS startdate,
-  h.enddate,
-  h."APR",
-  h.contact,
-  h.isfinished,
-  h.paybackdate,
-  h.isliquidated,
-  h.owner,
-  h.platform,
-  CCS.shortcode
-FROM public."hodlhodllend" AS h
-LEFT JOIN public.currencies AS CCS ON h.currency = CCS."ID"
+  l.counterparty,
+  l.amountstart::numeric AS amountstart,
+  l.amountend::numeric AS amountend,
+  l.contractdata,
+  l."ID",
+  l."lendcontractID",
+  l.startdate::date AS startdate,
+  l.enddate,
+  l."APR",
+  l.contact,
+  l.isfinished,
+  l.paybackdate,
+  l.isliquidated,
+  l.owner,
+  p.name AS platform,
+  CCS.shortcode,
+	l.operation_group
+FROM public.lendingevents AS l
+LEFT JOIN public.currencies AS CCS ON l.currency = CCS."ID"
+LEFT JOIN public.platforms AS p ON l.platform = p.id
 WHERE TRUE 
-{{ OwnerSelect.selectedOptionValue ? ` AND h.owner = '${OwnerSelect.selectedOptionValue}'` : '' }}
-{{ SwitchFinished.isSwitchedOn ? ` AND h.isfinished =  TRUE` : 'AND h.isfinished =  FALSE' }};
+{{ OwnerSelect.selectedOptionValue ? ` AND l.owner = '${OwnerSelect.selectedOptionValue}'` : '' }}
+{{ SwitchFinished.isSwitchedOn ? ` AND l.isfinished = TRUE` : 'AND l.isfinished = FALSE' }};

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"platform_currency_balance\" \nWHERE platform_name <> 'aux'\nOFFSET {{(data_table.pageNo - 1) * data_table.pageSize}};",
+      "body": "SELECT * FROM public.\"platform_currency_balance\" \nWHERE platform_name <> 'aux'\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,11 +22,7 @@
       "name": "WieczorekAssets",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "executeOnLoad": true,
     "name": "SelectBalancesQuery",
     "pageId": "Platforms",

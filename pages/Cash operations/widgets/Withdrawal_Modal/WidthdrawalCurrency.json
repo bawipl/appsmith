@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 27,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "diy89gybl6",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Asset\n",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 6.9375,
+  "parentId": "re9lvhuxsw",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 58,
+  "serverSideFiltering": false,
+  "sourceData": "{{CurrencyQuery.data.map( (obj) =>{ return  {'label': obj.shortcode + ' Max '+ obj.cash_balance, 'value': obj.shortcode } })}}",
+  "topRow": 20,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "113jmvjukt",
+  "widgetName": "WidthdrawalCurrency"
+}

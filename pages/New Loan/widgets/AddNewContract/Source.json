@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 69,
+  "boxShadow": "none",
+  "defaultOptionValue": "BART",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "zjqft8vt9c",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Source",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 63,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 56,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 17.2421875,
+  "parentId": "wojc9y9xnt",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 22,
+  "serverSideFiltering": false,
+  "sourceData": "{{platformbalances.data.map( (obj) =>{ return  {'label': obj.platform_name + ' '+ obj.cash_balance, 'value': obj.platform_name } })}}",
+  "topRow": 63,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "4jln6w8ups",
+  "widgetName": "Source"
+}

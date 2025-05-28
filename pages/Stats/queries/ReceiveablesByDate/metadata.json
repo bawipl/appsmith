@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  h.enddate,\n  SUM(h.amountend::numeric) AS daily_sum,\n  SUM(SUM(h.amountend::numeric)) OVER (ORDER BY h.enddate) AS cumulative_sum\nFROM public.hodlhodllend h\nLEFT JOIN public.currencies c ON h.currency = c.\"ID\"\nWHERE h.isfinished IS NULL OR h.isfinished = FALSE\nGROUP BY h.enddate\nORDER BY h.enddate ASC;\n\n",
+      "body": "SELECT \n  h.enddate,\n  SUM(h.amountend::numeric) AS daily_sum,\n  SUM(SUM(h.amountend::numeric)) OVER (ORDER BY h.enddate) AS cumulative_sum\nFROM public.lendingevents h\nLEFT JOIN public.currencies c ON h.currency = c.\"ID\"\nWHERE h.isfinished IS NULL OR h.isfinished = FALSE\nGROUP BY h.enddate\nORDER BY h.enddate ASC;\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

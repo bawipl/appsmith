@@ -46,6 +46,10 @@
       "isDefault": false
     },
     {
+      "id": "Finnacial Summary",
+      "isDefault": false
+    },
+    {
       "id": "Dual investment",
       "isDefault": false
     },
@@ -58,11 +62,7 @@
       "isDefault": false
     },
     {
-      "id": "Public.owner",
-      "isDefault": false
-    },
-    {
-      "id": "Finnacial Summary",
+      "id": "Owners",
       "isDefault": false
     }
   ],

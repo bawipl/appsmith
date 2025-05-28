@@ -1,0 +1,63 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 107,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "disabledWhenInvalid"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{!Contracts.selectedRow.operation_group}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "17ab7tuq8c",
+  "leftColumn": 41,
+  "minWidth": 120,
+  "mobileBottomRow": 119,
+  "mobileLeftColumn": 36,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 115,
+  "needsErrorInfo": false,
+  "onClick": "{{showModal(RegisterPaybackModal.name).then(() => {\n  RepaymentModal.ClearAmount();\n});}}",
+  "originalBottomRow": 107,
+  "originalTopRow": 103,
+  "parentColumnSpace": 20.21875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 57,
+  "text": "Register payback",
+  "topRow": 103,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "zoi0pka1a9",
+  "widgetName": "RegisterPaybackButton"
+}

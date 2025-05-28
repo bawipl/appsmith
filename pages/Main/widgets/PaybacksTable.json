@@ -1,0 +1,245 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 132,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "canFreezeColumn": false,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "date",
+    "amount",
+    "description",
+    "name"
+  ],
+  "columnUpdatedAt": 1748423326558,
+  "columnWidthMap": {},
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.date.computedValue"
+    },
+    {
+      "key": "primaryColumns.amount.computedValue"
+    },
+    {
+      "key": "primaryColumns.description.computedValue"
+    },
+    {
+      "key": "primaryColumns.name.computedValue"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": false,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": false,
+  "key": "rvcugqjsdg",
+  "label": "Data",
+  "leftColumn": 1,
+  "minWidth": 450,
+  "mobileBottomRow": 132,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 104,
+  "needsErrorInfo": false,
+  "originalBottomRow": 132,
+  "originalTopRow": 104,
+  "parentColumnSpace": 20.21875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "amount": {
+      "alias": "amount",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{PaybacksTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"amount\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "amount",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "amount",
+      "notation": "standard",
+      "originalId": "amount",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "date": {
+      "alias": "date",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{PaybacksTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"date\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "date",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "date",
+      "notation": "standard",
+      "originalId": "date",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "description": {
+      "alias": "description",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{PaybacksTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"description\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "description",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "description",
+      "notation": "standard",
+      "originalId": "description",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "name": {
+      "alias": "name",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{PaybacksTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "name",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "name",
+      "notation": "standard",
+      "originalId": "name",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 35,
+  "searchKey": "",
+  "tableData": "{{RepayOperationsQuery.data}}",
+  "textSize": "0.875rem",
+  "topRow": 104,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "f1nh59gut5",
+  "widgetName": "PaybacksTable"
+}

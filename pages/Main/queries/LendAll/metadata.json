@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  h.counterparty,\n  h.amountstart::numeric AS amountstart,\n  h.amountend::numeric AS amountend,\n  h.contractdata,\n  h.\"ID\",\n  h.\"lendcontractID\",\n  h.startdate::date AS startdate,\n  h.enddate,\n  h.\"APR\",\n  h.contact,\n  h.isfinished,\n  h.paybackdate,\n  h.isliquidated,\n  h.owner,\n  h.platform,\n  CCS.shortcode\nFROM public.\"hodlhodllend\" AS h\nLEFT JOIN public.currencies AS CCS ON h.currency = CCS.\"ID\"\nWHERE TRUE \n{{ OwnerSelect.selectedOptionValue ? ` AND h.owner = '${OwnerSelect.selectedOptionValue}'` : '' }}\n{{ SwitchFinished.isSwitchedOn ? ` AND h.isfinished =  TRUE` : 'AND h.isfinished =  FALSE' }};\n",
+      "body": "SELECT \n  l.counterparty,\n  l.amountstart::numeric AS amountstart,\n  l.amountend::numeric AS amountend,\n  l.contractdata,\n  l.\"ID\",\n  l.\"lendcontractID\",\n  l.startdate::date AS startdate,\n  l.enddate,\n  l.\"APR\",\n  l.contact,\n  l.isfinished,\n  l.paybackdate,\n  l.isliquidated,\n  l.owner,\n  p.name AS platform,\n  CCS.shortcode,\n\tl.operation_group\nFROM public.lendingevents AS l\nLEFT JOIN public.currencies AS CCS ON l.currency = CCS.\"ID\"\nLEFT JOIN public.platforms AS p ON l.platform = p.id\nWHERE TRUE \n{{ OwnerSelect.selectedOptionValue ? ` AND l.owner = '${OwnerSelect.selectedOptionValue}'` : '' }}\n{{ SwitchFinished.isSwitchedOn ? ` AND l.isfinished = TRUE` : 'AND l.isfinished = FALSE' }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

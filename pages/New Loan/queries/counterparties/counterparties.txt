@@ -1,5 +1,5 @@
 SELECT DISTINCT ON (counterparty)
     counterparty,
     contact
-FROM public."hodlhodllend"
+FROM public."lendingevents"
 ORDER BY counterparty, contact;

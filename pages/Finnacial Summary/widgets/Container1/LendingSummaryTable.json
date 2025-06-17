@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 32,
+  "bottomRow": 33,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -38,7 +38,7 @@
     "total_amountstart_remaining",
     "total_amountend_remaining"
   ],
-  "columnUpdatedAt": 1748434219352,
+  "columnUpdatedAt": 1748849643272,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -85,7 +85,11 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onRowSelected"
+    }
+  ],
   "enableClientSideSearch": true,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
@@ -106,6 +110,9 @@
   "mobileRightColumn": 35,
   "mobileTopRow": 136,
   "needsErrorInfo": false,
+  "onRowSelected": "{{storeValue('platform', LendingSummaryTable.selectedRow?.platform || '');\nstoreValue('owner', OwnerSelect.selectedOptionValue || '');\nnavigateTo('Lending', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 33,
+  "originalTopRow": 9,
   "parentColumnSpace": 50.25,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
@@ -161,7 +168,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Lent out",
       "notation": "standard",
       "originalId": "total_amountend",
@@ -223,7 +230,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "total_amountstart",
       "notation": "standard",
       "originalId": "total_amountstart",
@@ -254,7 +261,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Lent out",
       "notation": "standard",
       "originalId": "total_amountstart_remaining",
@@ -299,7 +306,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 33,
+  "rightColumn": 46,
   "searchKey": "",
   "tableData": "{{LendingSummary.data}}",
   "textSize": "0.875rem",

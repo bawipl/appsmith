@@ -9,6 +9,7 @@ SELECT
       FROM cashoperations cop
       WHERE cop.operation_group = l.operation_group
         AND cop.direction = 'in'
+		   	 AND cop.owner_id <> 'EXT'
     ), 0)
   ) AS total_repaid,
   SUM(l.amountstart::numeric - COALESCE((
@@ -22,10 +23,11 @@ SELECT
       FROM cashoperations cop
       WHERE cop.operation_group = l.operation_group
         AND cop.direction = 'in'
+  		AND cop.owner_id <> 'EXT'
     ), 0)) AS total_amountend_remaining
 FROM lendingevents l
 JOIN currencies c ON c."ID" = l.currency
 JOIN platforms p ON p.id = l.platform
-WHERE l.owner = {{OwnerSelect.selectedOptionValue}} AND NOT l.isfinished
+WHERE l.owner = {{appsmith.store.owner}} AND NOT l.isfinished
 GROUP BY  p.name
 ORDER BY p.name;

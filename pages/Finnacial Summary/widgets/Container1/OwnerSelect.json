@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "defaultOptionValue": "BART",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.owner))(OwnerSelect.options, OwnerSelect.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,6 +14,9 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -47,7 +50,7 @@
   "mobileRightColumn": 30,
   "mobileTopRow": 89,
   "needsErrorInfo": false,
-  "onOptionChange": "{{LendingSummary.run();\nCashSummary.run();}}",
+  "onOptionChange": "{{LendingSummary.run();\nCashSummary.run();\nstoreValue('owner', OwnerSelect.selectedOptionValue);}}",
   "optionLabel": "value",
   "optionValue": "value",
   "parentColumnSpace": 20.0625,

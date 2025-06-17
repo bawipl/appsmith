@@ -1,0 +1,13 @@
+SELECT
+    p."ID",
+    p.shortcode,
+    pc.cash_balance
+FROM
+    public."currencies" AS p
+LEFT JOIN
+    public."platform_currency_balance" pc
+    ON pc.currency = p.shortcode
+WHERE
+    ({{appsmith.store.platformname}} = '' OR 
+		 ( pc.platform_name = {{appsmith.store.platformname}})
+    AND pc.cash_balance IS NOT NULL) ;

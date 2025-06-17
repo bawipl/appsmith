@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67a2400b3e12e107acd1a186_78abaaf1-28ee-464a-8cea-b5b6015e94b0",
+  "id": "Lending_JSObject2",
+  "unpublishedCollection": {
+    "name": "JSObject2",
+    "pageId": "Lending",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

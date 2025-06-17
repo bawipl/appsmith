@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 71,
+  "bottomRow": 104,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,8 +33,8 @@
   "mobileRightColumn": 12,
   "mobileTopRow": 93,
   "needsErrorInfo": false,
-  "originalBottomRow": 206,
-  "originalTopRow": 201,
+  "originalBottomRow": 103,
+  "originalTopRow": 99,
   "overflow": "NONE",
   "parentColumnSpace": 16.6875,
   "parentId": "59rw5mx0bq",
@@ -43,10 +43,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldTruncate": false,
-  "text": "{{ \n(() => {\n  // Calculate sum\n  const total = CashSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.usd_value), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return \"Total liquid cash \" + total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
+  "text": "{{ \n(() => {\n  // Calculate sum\n  const total = CashSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.usd_value_raw), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return \"Total liquid cash \" + total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 67,
+  "topRow": 100,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -30,15 +30,19 @@
   "icon": "frame",
   "pages": [
     {
-      "id": "Main",
+      "id": "Lending",
       "isDefault": true
+    },
+    {
+      "id": "Operation summary",
+      "isDefault": false
     },
     {
       "id": "Stats",
       "isDefault": false
     },
     {
-      "id": "Cash operations",
+      "id": "New cash operation",
       "isDefault": false
     },
     {

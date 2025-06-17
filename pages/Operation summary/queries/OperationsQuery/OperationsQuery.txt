@@ -1,0 +1,100 @@
+WITH in_leg AS (
+  SELECT
+    id                        AS loan_id,
+    (date)                 AS ts_in,
+    (amount)               AS amt_in,
+    (owner_id)             AS in_owner,
+    (currency_id)          AS in_currency_id,
+    (platform_id)          AS in_platform_id,
+	description              AS in_description
+  FROM cashoperations
+  WHERE direction = 'in'
+),
+out_leg AS (
+  SELECT
+    id                        AS loan_id,
+    (date)                 AS ts_out,
+   (amount)               AS amt_out,
+    (owner_id)             AS out_owner,
+    (currency_id)          AS out_currency_id,
+    (platform_id)          AS out_platform_id,
+	description  AS out_descripion
+  FROM cashoperations
+  WHERE direction = 'out'
+),
+pairs AS (                                    -- ◀︎ remove duplicate loan_id
+  SELECT
+    co.loan_id,
+    COALESCE(i.ts_in, o.ts_out) AS op_date,
+
+    /* in-leg columns (no loan_id) */
+    i.ts_in,
+    i.amt_in,
+    i.in_owner,
+    i.in_currency_id,
+    i.in_platform_id,
+	  i.in_description,
+
+    /* out-leg columns (no loan_id) */
+    o.ts_out,
+    o.amt_out,
+    o.out_owner,
+    o.out_currency_id,
+    o.out_platform_id
+
+  FROM (SELECT DISTINCT id AS loan_id FROM cashoperations) co
+  LEFT JOIN in_leg  i ON i.loan_id = co.loan_id
+  LEFT JOIN out_leg o ON o.loan_id = co.loan_id
+  WHERE {{Owner.selectedOptionValue}} IN (i.in_owner, o.out_owner)
+),
+x AS (                                         -- names / shortcodes
+  SELECT
+    pr.*,
+    c_in.shortcode   AS in_currency,
+    c_out.shortcode  AS out_currency,
+    p_in.name        AS in_platform,
+    p_out.name       AS out_platform
+  FROM pairs pr
+  LEFT JOIN currencies c_in  ON c_in."ID" = pr.in_currency_id
+  LEFT JOIN currencies c_out ON c_out."ID" = pr.out_currency_id
+  LEFT JOIN platforms  p_in  ON p_in.id    = pr.in_platform_id
+  LEFT JOIN platforms  p_out ON p_out.id   = pr.out_platform_id
+)
+SELECT
+  x.loan_id                    AS id,
+  x.op_date                    AS date,
+	x.in_owner  AS iowner,
+	x.out_owner as oowner,
+  x.in_description as desc,
+
+  /* from the selected owner's perspective ----------------------- */
+  CASE WHEN x.in_owner = {{Owner.selectedOptionValue}}
+       THEN x.amt_in  ELSE x.amt_out END        AS amount_in,
+  CASE WHEN x.in_owner = {{Owner.selectedOptionValue}}
+       THEN x.in_currency ELSE x.out_currency END AS currency_in,
+ 
+      x.in_platform AS platform_in,
+
+  CASE WHEN x.out_owner = {{Owner.selectedOptionValue}}
+       THEN x.amt_out ELSE x.amt_in END         AS amount_out,
+  CASE WHEN x.out_owner = {{Owner.selectedOptionValue}}
+       THEN x.out_currency ELSE x.in_currency END AS currency_out,
+  
+       x.out_platform AS platform_out,
+
+  CASE
+    WHEN x.in_currency_id <> x.out_currency_id THEN
+         'Currency exchange from ' || x.out_currency || ' to ' || x.in_currency ||
+         ' at rate ' ||
+         ROUND((x.amt_in / NULLIF(x.amt_out,0))::numeric, 6)
+
+    WHEN x.in_owner <> x.out_owner THEN
+         CASE WHEN x.in_owner = {{Owner.selectedOptionValue}}
+              THEN 'Incoming transfer from ' || x.out_owner
+              ELSE 'Outgoing transfer to '  || x.in_owner
+         END
+    ELSE
+         'Internal transfer between platforms'
+  END AS details
+FROM x
+ORDER BY x.op_date DESC;

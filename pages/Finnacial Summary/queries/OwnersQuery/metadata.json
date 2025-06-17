@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT p.owner  FROM public.\"owner\" as p where active;",
+      "body": "SELECT p.owner  FROM public.\"owner\" as p where active;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

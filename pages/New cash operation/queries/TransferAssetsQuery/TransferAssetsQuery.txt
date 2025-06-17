@@ -1,0 +1,50 @@
+WITH generated_id AS (
+  SELECT nextval('cashoperations_id_seq') AS id
+),
+insert_in AS (
+  INSERT INTO public.cashoperations (
+    id,
+    direction,
+    owner_id,
+    date,
+    platform_id,
+    currency_id,
+    amount,
+    fee,
+    description
+  )
+  SELECT
+    id,
+    'in',
+    {{TransferCreditOwner.selectedOptionValue}},
+    CURRENT_TIMESTAMP,
+	   (SELECT id FROM platforms WHERE name = {{TransferPlatformTo.selectedOptionValue}}), 
+    (SELECT "ID" FROM currencies WHERE shortcode = {{TransferAssetTo.selectedOptionValue}}),
+    {{TransferAmountTo.text}}::double precision,
+    {{TransferFeeTo.text.text}}::double precision,
+    {{WidthdrawalDescriptionCopy.text}}
+  FROM generated_id
+)
+-- Second insert reuses the same CTE
+INSERT INTO public.cashoperations (
+  id,
+  direction,
+  owner_id,
+  date,
+  platform_id,
+  currency_id,
+  amount,
+  fee,
+  description
+)
+SELECT
+  id,
+  'out',
+ {{TransferDebitOwner.selectedOptionValue}},
+    CURRENT_TIMESTAMP,
+	   (SELECT id FROM platforms WHERE name ={{TransferPlatformFrom.selectedOptionValue}}), 
+    (SELECT "ID" FROM currencies WHERE shortcode = {{TransferAssetFrom.selectedOptionValue}}),
+    {{TransferAmountFrom.text}}::double precision,
+    {{TransferFeeFrom.text.text}}::double precision,
+    {{WidthdrawalDescriptionCopy.text}}
+FROM generated_id;

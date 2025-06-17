@@ -1,0 +1,24 @@
+SELECT 
+  l.counterparty,
+  l.amountstart::numeric AS amountstart,
+  l.amountend::numeric AS amountend,
+  l.contractdata,
+  l."ID",
+  l."lendcontractID",
+  l.startdate::date AS startdate,
+  l.enddate,
+  l."APR",
+  l.contact,
+  l.isfinished,
+  l.paybackdate,
+  l.isliquidated,
+  l.owner,
+  p.name AS platform,
+  CCS.shortcode,
+	l.operation_group
+FROM public.lendingevents AS l
+LEFT JOIN public.currencies AS CCS ON l.currency = CCS."ID"
+LEFT JOIN public.platforms AS p ON l.platform = p.id
+WHERE TRUE 
+{{ appsmith.store.owner ? ` AND l.owner = '${appsmith.store.owner}'` : '' }}
+{{ SwitchFinished.isSwitchedOn ? ` AND l.isfinished = TRUE` : 'AND l.isfinished = FALSE' }};

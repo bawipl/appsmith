@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT ON (counterparty)\n    counterparty,\n    contact\nFROM public.\"hodlhodllend\"\nORDER BY counterparty, contact;\n",
+      "body": "SELECT DISTINCT ON (counterparty)\n    counterparty,\n    contact\nFROM public.\"lendingevents\"\nORDER BY counterparty, contact;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

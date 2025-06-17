@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 66,
+  "bottomRow": 100,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -32,12 +32,13 @@
   },
   "columnOrder": [
     "platform",
-    "currency",
     "cash_balance",
+    "currency",
     "rate_to_usd",
-    "usd_value"
+    "usd_value",
+    "usd_value_raw"
   ],
-  "columnUpdatedAt": 1748434759408,
+  "columnUpdatedAt": 1748942378399,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -74,6 +75,9 @@
     },
     {
       "key": "primaryColumns.usd_value.computedValue"
+    },
+    {
+      "key": "primaryColumns.usd_value_raw.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -81,7 +85,11 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onRowSelected"
+    }
+  ],
   "enableClientSideSearch": true,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
@@ -102,8 +110,9 @@
   "mobileRightColumn": 36,
   "mobileTopRow": 171,
   "needsErrorInfo": false,
-  "originalBottomRow": 199,
-  "originalTopRow": 171,
+  "onRowSelected": "{{storeValue('platform', CashSummaryTable.selectedRow?.platform || '');\nstoreValue('owner', OwnerSelect.selectedOptionValue || '').then(() => {\n  navigateTo('Operation summary', {}, 'SAME_WINDOW');\n});}}",
+  "originalBottomRow": 99,
+  "originalTopRow": 38,
   "parentColumnSpace": 20.0625,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
@@ -262,15 +271,49 @@
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
+    },
+    "usd_value_raw": {
+      "alias": "usd_value_raw",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{CashSummaryTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"usd_value_raw\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "usd_value_raw",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "usd_value_raw",
+      "notation": "standard",
+      "originalId": "usd_value_raw",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
     }
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 35,
+  "rightColumn": 48,
   "searchKey": "",
   "tableData": "{{CashSummary.data}}",
   "textSize": "0.875rem",
-  "topRow": 38,
+  "topRow": 39,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

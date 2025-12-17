@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 38,
+  "bottomRow": 37,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 9,
   "shouldTruncate": false,
-  "text": "{{ \n(() => {\n  // Calculate sum\n  const total = LendingSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.total_amountstart_remaining), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return \"Total lent out \" + total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
+  "text": "{{ \n(() => {\n  // Calculate sum\n  const total = LendingSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.total_amountstart), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return \"Total lent out \" + total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 33,

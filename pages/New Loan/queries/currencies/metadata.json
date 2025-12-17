@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"currencies\" LIMIT 10;",
+      "body": "SELECT * FROM public.\"currencies\" LIMIT 100;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,6 +22,7 @@
       "name": "WieczorekAssets",
       "pluginId": "postgres-plugin"
     },
+    "dynamicBindingPathList": [],
     "executeOnLoad": true,
     "name": "currencies",
     "pageId": "New Loan",

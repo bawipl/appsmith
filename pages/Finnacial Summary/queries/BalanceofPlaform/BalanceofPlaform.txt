@@ -1,0 +1,50 @@
+WITH base AS (
+    SELECT
+        co.owner_id AS owner,
+        p.name      AS platform,
+        c.shortcode AS currency,
+        SUM(
+            CASE
+                WHEN co.direction = 'in'  THEN co.amount
+                WHEN co.direction = 'out' THEN -co.amount
+                ELSE 0
+            END
+        ) AS balance
+    FROM cashoperations co
+    JOIN platforms p  ON p.id = co.platform_id
+    JOIN currencies c ON c."ID" = co.currency_id
+    WHERE
+     
+         p.name = {{appsmith.store.platform}}
+    GROUP BY co.owner_id, p.name, c.shortcode
+)
+
+-- Detailed rows + per-currency totals
+SELECT
+    owner,
+    platform,
+    currency,
+    balance
+FROM (
+    -- Individual platform rows
+    SELECT
+        owner,
+        platform,
+        currency,
+        balance,
+        0 AS sort_order
+    FROM base
+
+    UNION ALL
+
+    -- Total per currency
+    SELECT
+        '[TOTAL]' AS owner,
+        NULL      AS platform,
+        currency,
+        SUM(balance) AS balance,
+        1 AS sort_order
+    FROM base
+    GROUP BY currency
+) t
+ORDER BY currency, sort_order, owner;

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 104,
+  "bottomRow": 103,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -46,7 +46,7 @@
   "text": "{{ \n(() => {\n  // Calculate sum\n  const total = CashSummaryTable.filteredTableData.reduce((sum, row) => sum + Number(row.usd_value_raw), 0);\n\n  // Format with ' as thousand separator and no decimals\n  return \"Total liquid cash \" + total.toLocaleString(\"de-CH\", {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 0,\n  })+ ' $';\n})() }}\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 100,
+  "topRow": 99,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  COALESCE((\n    SELECT SUM(amount)\n    FROM cashoperations\n    WHERE direction = 'out'\n  \n      \n      AND operation_group = {{Contracts.selectedRow.operation_group}}::uuid\n   \n  ), 0) AS total_payout;\n",
+      "body": "SELECT \n  COALESCE((\n    SELECT SUM(amount)\n\t\tFROM cashoperations\n    WHERE direction = 'out' and owner_id = 'EXT'\n  \n      \n      AND operation_group = {{Contracts.selectedRow.operation_group}}::uuid\n   \n  ), 0) AS total_payout;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,8 +1,8 @@
 SELECT 
   COALESCE((
     SELECT SUM(amount)
-    FROM cashoperations
-    WHERE direction = 'out'
+		FROM cashoperations
+    WHERE direction = 'out' and owner_id = 'EXT'
   
       
       AND operation_group = {{Contracts.selectedRow.operation_group}}::uuid

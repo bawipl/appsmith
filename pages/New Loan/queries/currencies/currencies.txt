@@ -1,1 +1,1 @@
-SELECT * FROM public."currencies" LIMIT 10;
+SELECT * FROM public."currencies" LIMIT 100;

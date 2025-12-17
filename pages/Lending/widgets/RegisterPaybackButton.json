@@ -42,7 +42,7 @@
   "mobileRightColumn": 52,
   "mobileTopRow": 115,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(RegisterPaybackModal.name).then(() => {\n  RepaymentModal.ClearAmount();\n});}}",
+  "onClick": "{{showModal(RegisterPaybackModal.name).then(() => {\n  RepaymentModal.ClearAmount();\n});\nTotalPayout.run()}}",
   "originalBottomRow": 107,
   "originalTopRow": 103,
   "parentColumnSpace": 20.21875,

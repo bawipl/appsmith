@@ -11,9 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -23,7 +20,7 @@
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "vxnv7pgubh",
+  "key": "a8sziurtd8",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
@@ -33,21 +30,21 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
+  "originalBottomRow": 7,
   "originalTopRow": 1,
   "overflow": "NONE",
-  "parentId": "djpbks0mtz",
+  "parentId": "49z3gx9tr3",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 57,
+  "rightColumn": 41,
   "shouldTruncate": false,
-  "text": "{{\"Contract \" + Contracts.selectedRow.lendcontractID + \" will be closed\"}}",
+  "text": "Do you want to see details of operations ?",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "v93o12kycu",
-  "widgetName": "Text2"
+  "widgetId": "u7f8tvxkyt",
+  "widgetName": "Text17"
 }

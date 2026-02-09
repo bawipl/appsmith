@@ -1,0 +1,50 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {"key": "accentColor"},
+    {"key": "borderRadius"},
+    {"key": "sourceData"}
+  ],
+  "dynamicPropertyPathList": [
+    {"key": "sourceData"}
+  ],
+  "dynamicTriggerPathList": [
+    {"key": "onOptionChange"}
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "owner2-select",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Owner 2 (Receiver of Leg 1)",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "onOptionChange": "{{SwapUtils.refreshOwner2Balance()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 11,
+  "originalTopRow": 4,
+  "parentId": "leg2-container-001",
+  "placeholderText": "Select owner...",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "serverSideFiltering": false,
+  "sourceData": "{{OwnersQuery.data.map(obj => ({label: obj.owner + ' - ' + obj.description, value: obj.owner}))}}",
+  "topRow": 4,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "owner2-select-001",
+  "widgetName": "Owner2Select"
+}

@@ -7,9 +7,15 @@
   "bottomRow": 44,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "dynamicBindingPathList": [
-    {"key": "borderRadius"},
-    {"key": "boxShadow"},
-    {"key": "text"}
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "text"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",

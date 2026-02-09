@@ -7,10 +7,14 @@
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
-    {"key": "borderRadius"}
+    {
+      "key": "borderRadius"
+    }
   ],
   "dynamicTriggerPathList": [
-    {"key": "onClick"}
+    {
+      "key": "onClick"
+    }
   ],
   "iconAlign": "left",
   "iconName": "swap-horizontal",
@@ -21,6 +25,7 @@
   "key": "execute-swap-btn",
   "leftColumn": 51,
   "minWidth": 120,
+  "onClick": "{{SwapUtils.executeSwapWithValidation()}}",
   "originalBottomRow": 44,
   "originalTopRow": 38,
   "parentId": "0",
@@ -28,7 +33,6 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 63,
-  "onClick": "{{SwapUtils.executeSwapWithValidation()}}",
   "text": "Execute Swap",
   "topRow": 38,
   "type": "BUTTON_WIDGET",

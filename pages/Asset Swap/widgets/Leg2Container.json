@@ -7,8 +7,12 @@
   "bottomRow": 35,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "dynamicBindingPathList": [
-    {"key": "borderRadius"},
-    {"key": "boxShadow"}
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
   ],
   "isCanvas": true,
   "isLoading": false,

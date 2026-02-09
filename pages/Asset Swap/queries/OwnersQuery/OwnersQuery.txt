@@ -1,0 +1,1 @@
+SELECT owner, description FROM public."owner" WHERE active ORDER BY owner;

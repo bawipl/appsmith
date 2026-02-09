@@ -1,0 +1,95 @@
+-- Asset Swap Transaction
+-- Creates 4 cash operations: 2 for each leg of the swap
+-- Leg 1: Owner1 sends Asset1 to Owner2
+-- Leg 2: Owner2 sends Asset2 to Owner1
+
+WITH
+swap_group AS (
+  SELECT gen_random_uuid() AS group_id
+),
+leg1_out AS (
+  -- Owner1 sends out Asset1
+  INSERT INTO cashoperations (
+    id, direction, owner_id, date,
+    platform_id, currency_id, amount,
+    fee, description, operation_group
+  )
+  SELECT
+    nextval('cashoperations_id_seq'),
+    'out',
+    {{Owner1Select.selectedOptionValue}}::char(5),
+    CURRENT_TIMESTAMP,
+    {{Platform1Select.selectedOptionValue}}::INTEGER,
+    {{Currency1Select.selectedOptionValue}}::INTEGER,
+    {{Amount1Input.text}}::DOUBLE PRECISION,
+    0,
+    'Swap OUT: ' || {{Amount1Input.text}} || ' ' || {{Currency1Select.selectedOptionLabel}} || ' to ' || {{Owner2Select.selectedOptionLabel}} || ' (swap with ' || {{Amount2Input.text}} || ' ' || {{Currency2Select.selectedOptionLabel}} || ')',
+    (SELECT group_id FROM swap_group)
+  RETURNING id
+),
+leg1_in AS (
+  -- Owner2 receives Asset1
+  INSERT INTO cashoperations (
+    id, direction, owner_id, date,
+    platform_id, currency_id, amount,
+    fee, description, operation_group
+  )
+  SELECT
+    nextval('cashoperations_id_seq'),
+    'in',
+    {{Owner2Select.selectedOptionValue}}::char(5),
+    CURRENT_TIMESTAMP,
+    {{Platform1Select.selectedOptionValue}}::INTEGER,
+    {{Currency1Select.selectedOptionValue}}::INTEGER,
+    {{Amount1Input.text}}::DOUBLE PRECISION,
+    0,
+    'Swap IN: ' || {{Amount1Input.text}} || ' ' || {{Currency1Select.selectedOptionLabel}} || ' from ' || {{Owner1Select.selectedOptionLabel}} || ' (swap for ' || {{Amount2Input.text}} || ' ' || {{Currency2Select.selectedOptionLabel}} || ')',
+    (SELECT group_id FROM swap_group)
+  RETURNING id
+),
+leg2_out AS (
+  -- Owner2 sends out Asset2
+  INSERT INTO cashoperations (
+    id, direction, owner_id, date,
+    platform_id, currency_id, amount,
+    fee, description, operation_group
+  )
+  SELECT
+    nextval('cashoperations_id_seq'),
+    'out',
+    {{Owner2Select.selectedOptionValue}}::char(5),
+    CURRENT_TIMESTAMP,
+    {{Platform2Select.selectedOptionValue}}::INTEGER,
+    {{Currency2Select.selectedOptionValue}}::INTEGER,
+    {{Amount2Input.text}}::DOUBLE PRECISION,
+    0,
+    'Swap OUT: ' || {{Amount2Input.text}} || ' ' || {{Currency2Select.selectedOptionLabel}} || ' to ' || {{Owner1Select.selectedOptionLabel}} || ' (swap with ' || {{Amount1Input.text}} || ' ' || {{Currency1Select.selectedOptionLabel}} || ')',
+    (SELECT group_id FROM swap_group)
+  RETURNING id
+),
+leg2_in AS (
+  -- Owner1 receives Asset2
+  INSERT INTO cashoperations (
+    id, direction, owner_id, date,
+    platform_id, currency_id, amount,
+    fee, description, operation_group
+  )
+  SELECT
+    nextval('cashoperations_id_seq'),
+    'in',
+    {{Owner1Select.selectedOptionValue}}::char(5),
+    CURRENT_TIMESTAMP,
+    {{Platform2Select.selectedOptionValue}}::INTEGER,
+    {{Currency2Select.selectedOptionValue}}::INTEGER,
+    {{Amount2Input.text}}::DOUBLE PRECISION,
+    0,
+    'Swap IN: ' || {{Amount2Input.text}} || ' ' || {{Currency2Select.selectedOptionLabel}} || ' from ' || {{Owner2Select.selectedOptionLabel}} || ' (swap for ' || {{Amount1Input.text}} || ' ' || {{Currency1Select.selectedOptionLabel}} || ')',
+    (SELECT group_id FROM swap_group)
+  RETURNING id
+)
+SELECT 
+  (SELECT group_id FROM swap_group) AS swap_id,
+  (SELECT id FROM leg1_out) AS leg1_out_id,
+  (SELECT id FROM leg1_in) AS leg1_in_id,
+  (SELECT id FROM leg2_out) AS leg2_out_id,
+  (SELECT id FROM leg2_in) AS leg2_in_id;

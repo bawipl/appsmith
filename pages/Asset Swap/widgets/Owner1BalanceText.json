@@ -3,10 +3,18 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 28,
   "dynamicBindingPathList": [
-    {"key": "truncateButtonColor"},
-    {"key": "fontFamily"},
-    {"key": "borderRadius"},
-    {"key": "text"}
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",

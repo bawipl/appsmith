@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "Owner1BalanceQuery",
     "pageId": "Asset Swap",
     "userSetOnLoad": false

@@ -392,7 +392,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "interestccout",
           "position": 11,
-          "sourceData": 0.0013146823529411767
+          "sourceData": "0.0013146823529411767"
         },
         "platform": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",

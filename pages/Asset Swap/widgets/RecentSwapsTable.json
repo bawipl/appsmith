@@ -20,24 +20,40 @@
     "movements"
   ],
   "columnWidthMap": {
-    "swap_date": 150,
+    "movements": 500,
     "parties": 150,
-    "movements": 500
+    "swap_date": 150
   },
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
   "delimiter": ",",
   "dynamicBindingPathList": [
-    {"key": "accentColor"},
-    {"key": "borderRadius"},
-    {"key": "boxShadow"},
-    {"key": "tableData"},
-    {"key": "primaryColumns.swap_date.computedValue"},
-    {"key": "primaryColumns.parties.computedValue"},
-    {"key": "primaryColumns.movements.computedValue"}
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.swap_date.computedValue"
+    },
+    {
+      "key": "primaryColumns.parties.computedValue"
+    },
+    {
+      "key": "primaryColumns.movements.computedValue"
+    }
   ],
   "dynamicPropertyPathList": [
-    {"key": "tableData"}
+    {
+      "key": "tableData"
+    }
   ],
   "enableClientSideSearch": true,
   "horizontalAlignment": "LEFT",
@@ -54,25 +70,24 @@
   "originalTopRow": 49,
   "parentId": "0",
   "primaryColumns": {
-    "swap_date": {
-      "alias": "swap_date",
-      "columnType": "date",
-      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.swap_date)}}",
+    "movements": {
+      "alias": "movements",
+      "columnType": "text",
+      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.movements)}}",
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "swap_date",
-      "index": 0,
+      "id": "movements",
+      "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isEditable": false,
       "isVisible": true,
-      "label": "Date",
-      "outputFormat": "DD/MM/YYYY HH:mm",
+      "label": "Movements",
       "textSize": "0.875rem",
       "verticalAlignment": "CENTER",
-      "width": 150
+      "width": 500
     },
     "parties": {
       "alias": "parties",
@@ -93,24 +108,25 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "movements": {
-      "alias": "movements",
-      "columnType": "text",
-      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.movements)}}",
+    "swap_date": {
+      "alias": "swap_date",
+      "columnType": "date",
+      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.swap_date)}}",
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "movements",
-      "index": 2,
+      "id": "swap_date",
+      "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isEditable": false,
       "isVisible": true,
-      "label": "Movements",
+      "label": "Date",
+      "outputFormat": "DD/MM/YYYY HH:mm",
       "textSize": "0.875rem",
       "verticalAlignment": "CENTER",
-      "width": 500
+      "width": 150
     }
   },
   "renderMode": "CANVAS",

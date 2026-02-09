@@ -1,0 +1,20 @@
+-- Show recent swap transactions (operations grouped together)
+SELECT 
+  co.operation_group AS swap_id,
+  MIN(co.date) AS swap_date,
+  STRING_AGG(DISTINCT co.owner_id, ' <-> ') AS parties,
+  STRING_AGG(
+    CASE WHEN co.direction = 'out' 
+    THEN co.owner_id || ' sent ' || co.amount || ' ' || c.shortcode || ' on ' || p.name
+    ELSE NULL END,
+    ' | '
+  ) AS movements,
+  COUNT(*) AS operation_count
+FROM cashoperations co
+JOIN currencies c ON c."ID" = co.currency_id
+JOIN platforms p ON p.id = co.platform_id
+WHERE co.description LIKE 'Swap%'
+GROUP BY co.operation_group
+HAVING COUNT(*) = 4
+ORDER BY MIN(co.date) DESC
+LIMIT 20;

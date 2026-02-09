@@ -6,15 +6,25 @@
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
-    {"key": "accentColor"},
-    {"key": "borderRadius"},
-    {"key": "sourceData"}
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
   ],
   "dynamicPropertyPathList": [
-    {"key": "sourceData"}
+    {
+      "key": "sourceData"
+    }
   ],
   "dynamicTriggerPathList": [
-    {"key": "onOptionChange"}
+    {
+      "key": "onOptionChange"
+    }
   ],
   "isDisabled": false,
   "isFilterable": true,

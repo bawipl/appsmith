@@ -1,0 +1,11 @@
+SELECT 
+  c.shortcode AS currency,
+  c."ID" AS currency_id,
+  SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) AS balance
+FROM cashoperations co
+JOIN currencies c ON c."ID" = co.currency_id
+WHERE co.owner_id = {{Owner1Select.selectedOptionValue}}
+  AND co.platform_id = {{Platform1Select.selectedOptionValue}}
+GROUP BY c.shortcode, c."ID"
+HAVING SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) > 0
+ORDER BY c.shortcode;

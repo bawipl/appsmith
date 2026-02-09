@@ -1,0 +1,1 @@
+SELECT "ID", shortcode, blockchain FROM public."currencies" ORDER BY shortcode;

@@ -7,8 +7,12 @@
   "boxShadow": "none",
   "defaultText": "",
   "dynamicBindingPathList": [
-    {"key": "accentColor"},
-    {"key": "borderRadius"}
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
   ],
   "dynamicHeight": "FIXED",
   "iconAlign": "left",

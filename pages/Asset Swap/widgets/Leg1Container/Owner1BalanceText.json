@@ -29,7 +29,7 @@
   "originalBottomRow": 28,
   "originalTopRow": 25,
   "overflow": "NONE",
-  "parentId": "leg1-container-001",
+  "parentId": "leg1-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 30,

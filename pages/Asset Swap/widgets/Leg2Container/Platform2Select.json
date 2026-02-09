@@ -31,7 +31,7 @@
   "isLoading": false,
   "isRequired": true,
   "isVisible": true,
-  "key": "platform1-select",
+  "key": "platform2-select",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelText": "Platform",
@@ -40,12 +40,12 @@
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "onOptionChange": "{{SwapUtils.refreshOwner1Balance()}}",
+  "onOptionChange": "{{SwapUtils.refreshOwner2Balance()}}",
   "optionLabel": "label",
   "optionValue": "value",
   "originalBottomRow": 18,
   "originalTopRow": 11,
-  "parentId": "leg1-container-001",
+  "parentId": "leg2-canvas-001",
   "placeholderText": "Select platform...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
@@ -55,6 +55,6 @@
   "topRow": 11,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "platform1-select-001",
-  "widgetName": "Platform1Select"
+  "widgetId": "platform2-select-001",
+  "widgetName": "Platform2Select"
 }

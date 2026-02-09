@@ -1,54 +1,48 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
+  "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 25,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "sourceData"
-    }
-  ],
+  "dynamicHeight": "FIXED",
+  "iconAlign": "left",
+  "inputType": "NUMBER",
   "isDisabled": false,
-  "isFilterable": true,
   "isLoading": false,
   "isRequired": true,
+  "isSpellCheck": false,
   "isVisible": true,
-  "key": "currency2-select",
+  "key": "amount2-input",
+  "label": "Amount",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Currency to Send",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 1,
+  "leftColumn": 18,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "optionLabel": "label",
-  "optionValue": "value",
   "originalBottomRow": 25,
   "originalTopRow": 18,
-  "parentId": "leg2-container-001",
-  "placeholderText": "Select currency...",
+  "parentId": "leg2-canvas-001",
+  "placeholderText": "0.00",
   "renderMode": "CANVAS",
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
-  "rightColumn": 18,
-  "serverSideFiltering": false,
-  "sourceData": "{{CurrenciesQuery.data.map(obj => ({label: obj.shortcode + ' (' + obj.blockchain + ')', value: obj.ID}))}}",
+  "rightColumn": 30,
+  "showStepArrows": false,
   "topRow": 18,
-  "type": "SELECT_WIDGET",
-  "version": 1,
-  "widgetId": "currency2-select-001",
-  "widgetName": "Currency2Select"
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "amount2-input-001",
+  "widgetName": "Amount2Input"
 }

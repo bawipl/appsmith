@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 28,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,33 +11,36 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.125rem",
-  "fontStyle": "BOLD",
+  "fontSize": "0.75rem",
+  "fontStyle": "ITALIC",
   "isLoading": false,
   "isVisible": true,
-  "key": "leg1-title",
+  "key": "owner2-balance",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 4,
-  "originalTopRow": 1,
+  "originalBottomRow": 28,
+  "originalTopRow": 25,
   "overflow": "NONE",
-  "parentId": "leg1-container-001",
+  "parentId": "leg2-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldTruncate": false,
-  "text": "📤 LEG 1: Owner 1 Sends",
+  "text": "{{Owner2BalanceQuery.data && Owner2BalanceQuery.data.length > 0 ? 'Available: ' + Owner2BalanceQuery.data.map(b => b.currency + ': ' + Number(b.balance).toLocaleString()).join(', ') : 'Select owner and platform to see balances'}}",
   "textAlign": "LEFT",
-  "textColor": "#1565C0",
-  "topRow": 1,
+  "textColor": "#666666",
+  "topRow": 25,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "leg1-title-001",
-  "widgetName": "Leg1Title"
+  "widgetId": "owner2-balance-001",
+  "widgetName": "Owner2BalanceText"
 }

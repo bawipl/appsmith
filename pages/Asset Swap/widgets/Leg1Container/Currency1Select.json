@@ -39,7 +39,7 @@
   "optionValue": "value",
   "originalBottomRow": 25,
   "originalTopRow": 18,
-  "parentId": "leg1-container-001",
+  "parentId": "leg1-canvas-001",
   "placeholderText": "Select currency...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",

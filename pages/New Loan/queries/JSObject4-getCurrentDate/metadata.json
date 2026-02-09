@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JSObject4.getCurrentDate",
     "name": "getCurrentDate",
     "pageId": "New Loan",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

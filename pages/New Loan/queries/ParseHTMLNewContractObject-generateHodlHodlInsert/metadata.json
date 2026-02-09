@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "ParseHTMLNewContractObject.generateHodlHodlInsert",
     "name": "generateHodlHodlInsert",
     "pageId": "New Loan",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

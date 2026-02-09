@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "InsertNewContract",
     "pageId": "New Loan",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

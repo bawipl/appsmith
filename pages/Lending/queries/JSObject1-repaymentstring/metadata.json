@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JSObject1.repaymentstring",
     "name": "repaymentstring",
     "pageId": "Lending",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

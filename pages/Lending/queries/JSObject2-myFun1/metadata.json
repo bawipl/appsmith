@@ -23,10 +23,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JSObject2.myFun1",
     "name": "myFun1",
     "pageId": "Lending",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

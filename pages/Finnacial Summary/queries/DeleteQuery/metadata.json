@@ -22,9 +22,9 @@
       "name": "WieczorekAssets",
       "pluginId": "postgres-plugin"
     },
-    "executeOnLoad": false,
     "name": "DeleteQuery",
     "pageId": "Finnacial Summary",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

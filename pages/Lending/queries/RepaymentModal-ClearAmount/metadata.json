@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "RepaymentModal.ClearAmount",
     "name": "ClearAmount",
     "pageId": "Lending",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

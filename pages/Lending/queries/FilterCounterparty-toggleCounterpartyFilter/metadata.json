@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "FilterCounterparty.toggleCounterpartyFilter",
     "name": "toggleCounterpartyFilter",
     "pageId": "Lending",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

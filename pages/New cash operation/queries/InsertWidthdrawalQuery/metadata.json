@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "InsertWidthdrawalQuery",
     "pageId": "New cash operation",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

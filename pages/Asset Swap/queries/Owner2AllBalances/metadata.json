@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Owner2AllBalances",
     "pageId": "Asset Swap",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

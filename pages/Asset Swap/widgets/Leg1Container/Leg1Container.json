@@ -9,7 +9,7 @@
   "children": [
     {
       "borderRadius": "0px",
-      "bottomRow": 320,
+      "bottomRow": 300,
       "boxShadow": "none",
       "canExtend": false,
       "containerStyle": "none",
@@ -54,7 +54,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 32,
+  "rightColumn": 18,
   "shouldScrollContents": false,
   "topRow": 7,
   "type": "CONTAINER_WIDGET",

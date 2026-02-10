@@ -29,7 +29,7 @@
     ],
     "name": "Owner2Leg1CurrencyBalances",
     "pageId": "Asset Swap",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

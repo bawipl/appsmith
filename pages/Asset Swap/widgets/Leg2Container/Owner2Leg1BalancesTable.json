@@ -4,31 +4,63 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 41,
+  "bottomRow": 64,
   "boxShadow": "none",
   "canFreezeColumn": false,
-  "columnOrder": ["platform", "currencies"],
+  "columnOrder": [
+    "platform_id",
+    "platform1",
+    "currencies1",
+    "currencyData"
+  ],
+  "columnUpdatedAt": 1770699868591,
   "columnWidthMap": {
+    "currencies": 280,
     "platform": 100,
-    "currencies": 280
+    "platform1": 103,
+    "platform_id": 60
   },
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": -1,
   "delimiter": ",",
   "dynamicBindingPathList": [
-    {"key": "accentColor"},
-    {"key": "borderRadius"},
-    {"key": "tableData"},
-    {"key": "isVisible"},
-    {"key": "primaryColumns.platform.computedValue"},
-    {"key": "primaryColumns.currencies.computedValue"}
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "primaryColumns.platform_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.platform1.computedValue"
+    },
+    {
+      "key": "primaryColumns.currencies1.computedValue"
+    },
+    {
+      "key": "primaryColumns.currencyData.computedValue"
+    }
   ],
   "dynamicPropertyPathList": [
-    {"key": "tableData"},
-    {"key": "isVisible"}
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisible"
+    }
   ],
   "dynamicTriggerPathList": [
-    {"key": "onRowSelected"}
+    {
+      "key": "onRowSelected"
+    }
   ],
   "enableClientSideSearch": false,
   "horizontalAlignment": "LEFT",
@@ -40,58 +72,156 @@
   "isVisiblePagination": false,
   "isVisibleSearch": true,
   "key": "owner2-leg1-balances-table",
-  "leftColumn": 30,
+  "leftColumn": 0,
   "onRowSelected": "{{(async () => {\n  const row = Owner2Leg1BalancesTable.selectedRow;\n  if (row && row.platform_id) {\n    // Parse the first currency from currencyData\n    const currencies = JSON.parse(row.currencyData || '[]');\n    if (currencies.length > 0) {\n      await SwapUtils.onBalanceClick(row.platform_id, row.platform, currencies[0].currency_id);\n    }\n  }\n})()}}",
   "originalBottomRow": 41,
   "originalTopRow": 7,
   "parentId": "leg2-canvas-001",
   "primaryColumns": {
-    "platform": {
-      "alias": "platform",
+    "currencies1": {
+      "alias": "currencies",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{Owner2Leg1BalancesTable.processedTableData.map((row) => row.platform)}}",
+      "computedValue": "{{(() => { const tableData = Owner2Leg1BalancesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"currencies\"])) : currencies })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "platform",
-      "index": 0,
+      "id": "currencies1",
+      "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
       "isEditable": false,
+      "isSaveVisible": true,
       "isVisible": true,
-      "label": "Platform",
+      "label": "currencies",
+      "notation": "standard",
+      "originalId": "currencies",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.75rem",
+      "thousandSeparator": true,
+      "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 100
+      "width": 150
     },
-    "currencies": {
-      "alias": "currencies",
+    "currencyData": {
+      "alias": "currencyData",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{Owner2Leg1BalancesTable.processedTableData.map((row) => row.currencies)}}",
+      "computedValue": "{{(() => { const tableData = Owner2Leg1BalancesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"currencyData\"])) : currencyData })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "currencies",
+      "id": "currencyData",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "currencyData",
+      "notation": "standard",
+      "originalId": "currencyData",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.75rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "platform1": {
+      "alias": "platform",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Owner2Leg1BalancesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"platform\"])) : platform })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "platform1",
       "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
       "isEditable": false,
+      "isSaveVisible": true,
       "isVisible": true,
-      "label": "Currencies",
+      "label": "platform",
+      "notation": "standard",
+      "originalId": "platform",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.75rem",
+      "thousandSeparator": true,
+      "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 280
+      "width": 150
+    },
+    "platform_id": {
+      "alias": "platform_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Owner2Leg1BalancesTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"platform_id\"])) : platform_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "platform_id",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "platform_id",
+      "notation": "standard",
+      "originalId": "platform_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.75rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
     }
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 62,
+  "rightColumn": 64,
   "searchKey": "",
   "tableData": "{{SwapUtils.getOwner2AllBalancesGrouped()}}",
   "textSize": "0.75rem",
-  "topRow": 7,
+  "topRow": 30,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

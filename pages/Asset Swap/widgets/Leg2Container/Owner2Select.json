@@ -2,18 +2,15 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 12,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -43,16 +40,16 @@
   "onOptionChange": "{{SwapUtils.refreshOwner2Balance()}}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 18,
-  "originalTopRow": 11,
+  "originalBottomRow": 14,
+  "originalTopRow": 7,
   "parentId": "leg2-canvas-001",
   "placeholderText": "Select owner...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 25,
   "serverSideFiltering": false,
-  "sourceData": "{{OwnersQuery.data.map(obj => ({label: obj.owner + ' - ' + obj.description, value: obj.owner}))}}",
-  "topRow": 7,
+  "sourceData": "{{OwnersQuery.data.map(obj => ({label: obj.owner , value: obj.owner}))}}",
+  "topRow": 5,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "owner2-select-001",

@@ -4,19 +4,10 @@
   "bottomRow": 5,
   "dynamicBindingPathList": [
     {
-      "key": "truncateButtonColor"
+      "key": "isVisible"
     },
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "text"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -31,7 +22,7 @@
   "isLoading": false,
   "isVisible": "{{Owner2Select.selectedOptionValue && Array.isArray(Owner2AllBalances.data) && Owner2AllBalances.data.length > 0}}",
   "key": "owner2-leg1-balances-label",
-  "leftColumn": 33,
+  "leftColumn": 42,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "originalBottomRow": 5,
@@ -40,7 +31,7 @@
   "parentId": "leg2-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 62,
+  "rightColumn": 64,
   "shouldTruncate": false,
   "text": "Owner 2 All Balances (click row to select):",
   "textAlign": "LEFT",

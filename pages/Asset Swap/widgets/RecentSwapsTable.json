@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 96,
+  "bottomRow": 113,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": false,
   "childStylesheet": {
@@ -33,6 +33,24 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.parties1.computedValue"
+    },
+    {
+      "key": "primaryColumns.swap_date1.computedValue"
+    },
+    {
+      "key": "primaryColumns.movements1.computedValue"
+    },
+    {
+      "key": "primaryColumns.operation_count.computedValue"
+    },
+    {
+      "key": "primaryColumns.swap_id.computedValue"
+    },
+    {
       "key": "accentColor"
     },
     {
@@ -40,24 +58,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.swap_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.swap_date1.computedValue"
-    },
-    {
-      "key": "primaryColumns.parties1.computedValue"
-    },
-    {
-      "key": "primaryColumns.movements1.computedValue"
-    },
-    {
-      "key": "primaryColumns.operation_count.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -77,8 +77,8 @@
   "isVisibleSearch": true,
   "key": "recent-swaps-table",
   "leftColumn": 1,
-  "originalBottomRow": 75,
-  "originalTopRow": 49,
+  "originalBottomRow": 96,
+  "originalTopRow": 70,
   "parentId": "0",
   "primaryColumns": {
     "movements1": {
@@ -258,7 +258,7 @@
   "searchKey": "",
   "tableData": "{{Array.isArray(RecentSwapsQuery.data) ? RecentSwapsQuery.data : []}}",
   "textSize": "0.875rem",
-  "topRow": 70,
+  "topRow": 87,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

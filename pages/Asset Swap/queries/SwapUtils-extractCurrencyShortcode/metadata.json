@@ -1,12 +1,16 @@
 {
-  "gitSyncId": "698a357d72e8af06eb7f9f50_8c1edaed-f057-4427-9a30-bf9b4ff24905",
-  "id": "Asset Swap_SwapUtils.refreshOwner2Leg1Balances",
+  "gitSyncId": "698a357d72e8af06eb7f9f50_40691dbd-41bc-452b-aa47-28f2646b507d",
+  "id": "Asset Swap_SwapUtils.extractCurrencyShortcode",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "label"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "SwapUtils.refreshOwner2Leg1Balances",
-    "name": "refreshOwner2Leg1Balances",
+    "fullyQualifiedName": "SwapUtils.extractCurrencyShortcode",
+    "name": "extractCurrencyShortcode",
     "pageId": "Asset Swap",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

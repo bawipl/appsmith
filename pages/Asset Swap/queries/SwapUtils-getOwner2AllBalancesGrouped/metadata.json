@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "698a357d72e8af06eb7f9f50_6ca9eb18-eac1-4656-b30b-f0b37184a1ca",
-  "id": "Asset Swap_SwapUtils.getOwner2Leg1BalancesFormatted",
+  "gitSyncId": "698a357d72e8af06eb7f9f50_697f122c-0ebc-418e-81a0-96f04426a592",
+  "id": "Asset Swap_SwapUtils.getOwner2AllBalancesGrouped",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "SwapUtils.getOwner2Leg1BalancesFormatted",
-    "name": "getOwner2Leg1BalancesFormatted",
+    "fullyQualifiedName": "SwapUtils.getOwner2AllBalancesGrouped",
+    "name": "getOwner2AllBalancesGrouped",
     "pageId": "Asset Swap",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

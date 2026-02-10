@@ -4,12 +4,12 @@
   "borderColor": "#E65100",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 35,
+  "bottomRow": 60,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "0px",
-      "bottomRow": 280,
+      "bottomRow": 530,
       "boxShadow": "none",
       "canExtend": false,
       "containerStyle": "none",
@@ -33,8 +33,12 @@
   ],
   "containerStyle": "card",
   "dynamicBindingPathList": [
-    {"key": "borderRadius"},
-    {"key": "boxShadow"}
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
   ],
   "dynamicHeight": "FIXED",
   "isLoading": false,

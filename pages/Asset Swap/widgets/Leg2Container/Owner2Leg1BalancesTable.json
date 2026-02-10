@@ -4,29 +4,49 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 45,
+  "bottomRow": 41,
   "boxShadow": "none",
   "canFreezeColumn": false,
-  "columnOrder": ["platform", "balance"],
+  "columnOrder": [
+    "platform",
+    "balance"
+  ],
   "columnWidthMap": {
-    "platform": 120,
-    "balance": 100
+    "balance": 100,
+    "platform": 120
   },
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": -1,
   "delimiter": ",",
   "dynamicBindingPathList": [
-    {"key": "accentColor"},
-    {"key": "borderRadius"},
-    {"key": "tableData"},
-    {"key": "isVisible"},
-    {"key": "primaryColumns.platform.computedValue"},
-    {"key": "primaryColumns.balance.computedValue"}
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "primaryColumns.platform.computedValue"
+    },
+    {
+      "key": "primaryColumns.balance.computedValue"
+    }
   ],
   "dynamicPropertyPathList": [
-    {"key": "tableData"},
-    {"key": "isVisible"}
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisible"
+    }
   ],
+  "dynamicTriggerPathList": [],
   "enableClientSideSearch": false,
   "horizontalAlignment": "LEFT",
   "isLoading": false,
@@ -35,32 +55,13 @@
   "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": false,
-  "isVisibleSearch": false,
+  "isVisibleSearch": true,
   "key": "owner2-leg1-balances-table",
-  "leftColumn": 1,
-  "originalBottomRow": 45,
-  "originalTopRow": 29,
+  "leftColumn": 30,
+  "originalBottomRow": 41,
+  "originalTopRow": 7,
   "parentId": "leg2-canvas-001",
   "primaryColumns": {
-    "platform": {
-      "alias": "platform",
-      "columnType": "text",
-      "computedValue": "{{Owner2Leg1BalancesTable.processedTableData.map((row) => row.platform)}}",
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "platform",
-      "index": 0,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isEditable": false,
-      "isVisible": true,
-      "label": "Platform",
-      "textSize": "0.75rem",
-      "verticalAlignment": "CENTER",
-      "width": 120
-    },
     "balance": {
       "alias": "balance",
       "columnType": "text",
@@ -79,15 +80,34 @@
       "textSize": "0.75rem",
       "verticalAlignment": "CENTER",
       "width": 100
+    },
+    "platform": {
+      "alias": "platform",
+      "columnType": "text",
+      "computedValue": "{{Owner2Leg1BalancesTable.processedTableData.map((row) => row.platform)}}",
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "platform",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Platform",
+      "textSize": "0.75rem",
+      "verticalAlignment": "CENTER",
+      "width": 120
     }
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 62,
   "searchKey": "",
   "tableData": "{{SwapUtils.getOwner2Leg1BalancesFormatted()}}",
   "textSize": "0.75rem",
-  "topRow": 29,
+  "topRow": 7,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

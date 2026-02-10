@@ -4,7 +4,7 @@
   "borderColor": "#4CAF50",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "2",
-  "bottomRow": 44,
+  "bottomRow": 66,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "dynamicBindingPathList": [
     {
@@ -38,7 +38,7 @@
   "text": "{{SwapUtils.getSwapSummary()}}",
   "textAlign": "LEFT",
   "textColor": "#2E7D32",
-  "topRow": 37,
+  "topRow": 60,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

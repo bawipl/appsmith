@@ -1,39 +1,51 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 29,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
-    {"key": "truncateButtonColor"},
-    {"key": "fontFamily"},
-    {"key": "borderRadius"},
-    {"key": "text"},
-    {"key": "isVisible"}
-  ],
-  "dynamicPropertyPathList": [
-    {"key": "isVisible"}
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "0.75rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": "{{Owner2Select.selectedOptionValue && Currency1Select.selectedOptionValue && Array.isArray(Owner2Leg1CurrencyBalances.data) && Owner2Leg1CurrencyBalances.data.length > 0}}",
   "key": "owner2-leg1-balances-label",
-  "leftColumn": 1,
+  "leftColumn": 33,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 29,
-  "originalTopRow": 26,
+  "originalBottomRow": 5,
+  "originalTopRow": 1,
   "overflow": "NONE",
   "parentId": "leg2-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 62,
   "shouldTruncate": false,
   "text": "{{Currency1Select.selectedOptionLabel ? 'Owner 2 balances of ' + Currency1Select.selectedOptionLabel.split(' ')[1] + ':' : ''}}",
   "textAlign": "LEFT",
   "textColor": "#E65100",
-  "topRow": 26,
+  "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

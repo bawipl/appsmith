@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n  c.shortcode AS currency,\n  c.\"ID\" AS currency_id,\n  c.blockchain,\n  SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) AS balance\nFROM cashoperations co\nJOIN currencies c ON c.\"ID\" = co.currency_id\nWHERE co.owner_id = {{Owner1Select.selectedOptionValue || 'XXXXX'}}\n  AND co.platform_id = {{Platform1Select.selectedOptionValue ? Platform1Select.selectedOptionValue : -1}}::INTEGER\nGROUP BY c.shortcode, c.\"ID\", c.blockchain\nHAVING SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) > 0\nORDER BY c.shortcode;",
+      "body": "SELECT \n  c.shortcode AS currency,\n  c.\"ID\" AS currency_id,\n  SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) AS balance\nFROM cashoperations co\nJOIN currencies c ON c.\"ID\" = co.currency_id\nWHERE co.owner_id = {{Owner1Select.selectedOptionValue}}\n  AND co.platform_id = {{Platform1Select.selectedOptionValue}}\nGROUP BY c.shortcode, c.\"ID\"\nHAVING SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) > 0\nORDER BY c.shortcode;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Owner1BalanceQuery",
     "pageId": "Asset Swap",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

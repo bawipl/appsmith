@@ -1,4 +1,102 @@
 export default {
+  // Check if two currencies are considered "same value" (USD stablecoins)
+  areCurrenciesSameValue(currency1, currency2) {
+    if (!currency1 || !currency2) return false;
+    const c1 = currency1.toUpperCase();
+    const c2 = currency2.toUpperCase();
+    
+    // Exact match
+    if (c1 === c2) return true;
+    
+    // USD stablecoin family (USD, USDC, USDT are considered same value)
+    const usdFamily = ['USD', 'USDC', 'USDT'];
+    const c1IsUsd = usdFamily.some(u => c1.includes(u));
+    const c2IsUsd = usdFamily.some(u => c2.includes(u));
+    
+    return c1IsUsd && c2IsUsd;
+  },
+
+  // Check if amounts differ by more than a given percentage
+  amountsDifferByPercent(amount1, amount2, threshold) {
+    const a1 = parseFloat(amount1) || 0;
+    const a2 = parseFloat(amount2) || 0;
+    
+    if (a1 === 0 && a2 === 0) return false;
+    if (a1 === 0 || a2 === 0) return true;
+    
+    const percentDiff = Math.abs((a1 - a2) / Math.max(a1, a2)) * 100;
+    return percentDiff > threshold;
+  },
+
+  // Get warning status for swap
+  // Returns: { type: 'none' | 'red' | 'yellow', message: string }
+  getSwapWarning() {
+    const currency1Full = Currency1Select.selectedOptionLabel || '';
+    const currency2Full = Currency2Select.selectedOptionLabel || '';
+    const currency1 = this.extractCurrencyShortcode(currency1Full);
+    const currency2 = this.extractCurrencyShortcode(currency2Full);
+    const amount1 = Amount1Input.text || '0';
+    const amount2 = Amount2Input.text || '0';
+    
+    // If no currencies selected, no warning
+    if (!currency1 || !currency2 || currency1 === '?' || currency2 === '?') {
+      return { type: 'none', message: '' };
+    }
+    
+    const sameValue = this.areCurrenciesSameValue(currency1, currency2);
+    
+    if (sameValue) {
+      // Same value currencies - check if amounts differ by more than 0.5%
+      if (this.amountsDifferByPercent(amount1, amount2, 0.5)) {
+        return { 
+          type: 'red', 
+          message: '⚠️ Warning: Amounts differ by more than 0.5% for same-value currencies!' 
+        };
+      }
+      return { type: 'none', message: '' };
+    } else {
+      // Different currencies - this is an exchange
+      return { 
+        type: 'yellow', 
+        message: '💱 Note: Asset swap combined with asset exchange (different currencies)' 
+      };
+    }
+  },
+
+  // Get warning visibility
+  isWarningVisible() {
+    return this.getSwapWarning().type !== 'none';
+  },
+
+  // Get warning text
+  getWarningText() {
+    return this.getSwapWarning().message;
+  },
+
+  // Get warning background color
+  getWarningBackgroundColor() {
+    const warning = this.getSwapWarning();
+    if (warning.type === 'red') return '#FFEBEE'; // Light red
+    if (warning.type === 'yellow') return '#FFF8E1'; // Light yellow
+    return '#FFFFFF';
+  },
+
+  // Get warning border color
+  getWarningBorderColor() {
+    const warning = this.getSwapWarning();
+    if (warning.type === 'red') return '#F44336'; // Red
+    if (warning.type === 'yellow') return '#FFC107'; // Yellow/amber
+    return '#FFFFFF';
+  },
+
+  // Get warning text color
+  getWarningTextColor() {
+    const warning = this.getSwapWarning();
+    if (warning.type === 'red') return '#C62828'; // Dark red
+    if (warning.type === 'yellow') return '#F57F17'; // Dark amber
+    return '#000000';
+  },
+
   // Format balance based on currency
   formatBalance(balance, currency) {
     if (balance === null || balance === undefined) return '0';

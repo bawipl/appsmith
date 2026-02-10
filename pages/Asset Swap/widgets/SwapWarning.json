@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "{{SwapUtils.getWarningBackgroundColor()}}",
+  "borderColor": "{{SwapUtils.getWarningBorderColor()}}",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "2",
+  "bottomRow": 75,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "backgroundColor"
+    },
+    {
+      "key": "borderColor"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.95rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": "{{SwapUtils.isWarningVisible()}}",
+  "key": "swap-warning",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "originalBottomRow": 75,
+  "originalTopRow": 71,
+  "overflow": "NONE",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 50,
+  "shouldTruncate": false,
+  "text": "{{SwapUtils.getWarningText()}}",
+  "textAlign": "CENTER",
+  "textColor": "{{SwapUtils.getWarningTextColor()}}",
+  "topRow": 71,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "swap-warning-001",
+  "widgetName": "SwapWarning"
+}

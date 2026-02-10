@@ -40,6 +40,17 @@
       {
         "actionConfiguration": {
           "body": "",
+          "isAsync": true,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "refreshOwner2Leg1Balances",
+        "name": "refreshOwner2Leg1Balances"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
           "isAsync": false,
           "timeoutInMillisecond": 10000
         },
@@ -58,6 +69,17 @@
         "executeOnLoad": false,
         "id": "getCurrency2Options",
         "name": "getCurrency2Options"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "getOwner2Leg1BalancesFormatted",
+        "name": "getOwner2Leg1BalancesFormatted"
       },
       {
         "actionConfiguration": {

@@ -34,7 +34,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldTruncate": false,
-  "text": "{{Owner1BalanceQuery.data && Owner1BalanceQuery.data.length > 0 ? 'Available: ' + Owner1BalanceQuery.data.map(b => b.currency + ': ' + Number(b.balance).toLocaleString()).join(', ') : 'Select owner and platform to see balances'}}",
+  "text": "{{Array.isArray(Owner1BalanceQuery.data) && Owner1BalanceQuery.data.length > 0 ? 'Available: ' + Owner1BalanceQuery.data.map(b => b.currency + ': ' + Number(b.balance).toLocaleString()).join(', ') : 'Select owner and platform to see balances'}}",
   "textAlign": "LEFT",
   "textColor": "#666666",
   "topRow": 25,

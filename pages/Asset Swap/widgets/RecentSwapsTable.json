@@ -133,7 +133,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "searchKey": "",
-  "tableData": "{{RecentSwapsQuery.data}}",
+  "tableData": "{{Array.isArray(RecentSwapsQuery.data) ? RecentSwapsQuery.data : []}}",
   "textSize": "0.875rem",
   "topRow": 49,
   "totalRecordsCount": 0,

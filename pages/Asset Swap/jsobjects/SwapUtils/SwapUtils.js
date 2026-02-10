@@ -20,22 +20,36 @@ export default {
     if (Owner2Select.selectedOptionValue && Platform2Select.selectedOptionValue) {
       await Owner2BalanceQuery.run();
     }
+    // Also refresh Owner2's balances for Leg1 currency
+    if (Owner2Select.selectedOptionValue && Currency1Select.selectedOptionValue) {
+      await Owner2Leg1CurrencyBalances.run();
+    }
+  },
+
+  // Refresh Owner2's Leg1 currency balances when currency1 or owner2 changes
+  async refreshOwner2Leg1Balances() {
+    if (Owner2Select.selectedOptionValue && Currency1Select.selectedOptionValue) {
+      await Owner2Leg1CurrencyBalances.run();
+    }
   },
 
   // Get formatted currency options for Owner1 with balances
   getCurrency1Options() {
-    const balances = Owner1BalanceQuery.data || [];
-    if (balances.length === 0) {
-      return CurrenciesQuery.data?.map(obj => ({
-        label: obj.shortcode + ' (' + obj.blockchain + ')',
+    const balances = Owner1BalanceQuery.data;
+    // Handle case where data is not an array or is empty
+    if (!Array.isArray(balances) || balances.length === 0) {
+      const currencies = CurrenciesQuery.data;
+      if (!Array.isArray(currencies)) return [];
+      return currencies.map(obj => ({
+        label: obj.shortcode + ' (' + (obj.blockchain || '') + ')',
         value: obj.ID
-      })) || [];
+      }));
     }
     return balances.map(b => {
       const decimals = (b.currency === 'BTC' || b.currency === 'ETH') ? 8 : 2;
       const formattedBalance = Number(b.balance).toFixed(decimals);
       return {
-        label: formattedBalance + ' ' + b.currency + ' (' + (CurrenciesQuery.data?.find(c => c.ID === b.currency_id)?.blockchain || '') + ')',
+        label: formattedBalance + ' ' + b.currency + ' (' + (b.blockchain || '') + ')',
         value: b.currency_id
       };
     });
@@ -43,21 +57,40 @@ export default {
 
   // Get formatted currency options for Owner2 with balances
   getCurrency2Options() {
-    const balances = Owner2BalanceQuery.data || [];
-    if (balances.length === 0) {
-      return CurrenciesQuery.data?.map(obj => ({
-        label: obj.shortcode + ' (' + obj.blockchain + ')',
+    const balances = Owner2BalanceQuery.data;
+    // Handle case where data is not an array or is empty
+    if (!Array.isArray(balances) || balances.length === 0) {
+      const currencies = CurrenciesQuery.data;
+      if (!Array.isArray(currencies)) return [];
+      return currencies.map(obj => ({
+        label: obj.shortcode + ' (' + (obj.blockchain || '') + ')',
         value: obj.ID
-      })) || [];
+      }));
     }
     return balances.map(b => {
       const decimals = (b.currency === 'BTC' || b.currency === 'ETH') ? 8 : 2;
       const formattedBalance = Number(b.balance).toFixed(decimals);
       return {
-        label: formattedBalance + ' ' + b.currency + ' (' + (CurrenciesQuery.data?.find(c => c.ID === b.currency_id)?.blockchain || '') + ')',
+        label: formattedBalance + ' ' + b.currency + ' (' + (b.blockchain || '') + ')',
         value: b.currency_id
       };
     });
+  },
+
+  // Get Owner2's Leg1 currency balances formatted for display
+  getOwner2Leg1BalancesFormatted() {
+    const data = Owner2Leg1CurrencyBalances.data;
+    if (!Array.isArray(data) || data.length === 0) return [];
+    
+    // Get currency info for formatting
+    const currency1Label = Currency1Select.selectedOptionLabel || '';
+    const currencyCode = currency1Label.split(' ')[1] || currency1Label.split('(')[0]?.trim() || '';
+    const decimals = (currencyCode === 'BTC' || currencyCode === 'ETH') ? 8 : 2;
+    
+    return data.map(row => ({
+      platform: row.platform,
+      balance: Number(row.balance).toFixed(decimals)
+    }));
   },
 
   // Get swap summary text
@@ -73,7 +106,16 @@ export default {
       return 'Select both owners to see swap summary';
     }
     
-    return `📤 ${owner1} sends ${amount1} ${currency1}\n📥 ${owner2} sends ${amount2} ${currency2}`;
+    // Calculate exchange rate
+    let rateInfo = '';
+    const amt1 = parseFloat(amount1) || 0;
+    const amt2 = parseFloat(amount2) || 0;
+    if (amt1 > 0 && amt2 > 0) {
+      const rate = (amt2 / amt1).toFixed(8);
+      rateInfo = `\n📊 Rate: 1 ${currency1.split(' ')[0] || currency1} = ${rate} ${currency2.split(' ')[0] || currency2}`;
+    }
+    
+    return `📤 ${owner1} sends ${amount1} ${currency1}\n📥 ${owner2} sends ${amount2} ${currency2}${rateInfo}`;
   },
 
   // Validate and execute swap

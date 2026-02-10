@@ -21,6 +21,12 @@
       "key": "sourceData"
     }
   ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "onOptionChange": "{{SwapUtils.refreshOwner2Leg1Balances()}}",
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,

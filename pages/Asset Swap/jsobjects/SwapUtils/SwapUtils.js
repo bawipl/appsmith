@@ -136,12 +136,12 @@ export default {
 
   // Handle click on a currency in the balances table
   async onBalanceClick(platformId, platformName, currencyId) {
-    // Set Platform2Select value
-    await Platform2Select.setValue(platformId);
+    // Set Platform2Select value using storeValue
+    await storeValue('platform2Selection', platformId);
     // Refresh currency options for the new platform
     await Owner2BalanceQuery.run();
-    // Set Currency2Select value
-    await Currency2Select.setValue(currencyId);
+    // Set Currency2Select value using storeValue
+    await storeValue('currency2Selection', currencyId);
   },
 
   // Get swap summary text - now using just currency shortcodes

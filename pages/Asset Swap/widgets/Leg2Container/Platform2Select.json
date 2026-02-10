@@ -4,13 +4,16 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 19,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{appsmith.store.platform2Selection || ''}}",
   "dynamicBindingPathList": [
     {
       "key": "sourceData"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicPropertyPathList": [

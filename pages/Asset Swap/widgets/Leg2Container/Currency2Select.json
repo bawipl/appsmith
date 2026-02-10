@@ -45,7 +45,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 18,
   "serverSideFiltering": false,
-  "sourceData": "{{CurrenciesQuery.data.map(obj => ({label: obj.shortcode + ' (' + obj.blockchain + ')', value: obj.ID}))}}",
+  "sourceData": "{{SwapUtils.getCurrency2Options()}}",
   "topRow": 18,
   "type": "SELECT_WIDGET",
   "version": 1,

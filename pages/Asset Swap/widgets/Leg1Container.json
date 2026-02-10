@@ -1,0 +1,35 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#E3F2FD",
+  "borderColor": "#1976D2",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 35,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "leg1-container",
+  "leftColumn": 1,
+  "minHeight": 280,
+  "originalBottomRow": 35,
+  "originalTopRow": 7,
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 32,
+  "topRow": 7,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "leg1-container-001",
+  "widgetName": "Leg1Container"
+}

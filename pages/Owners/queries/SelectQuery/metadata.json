@@ -22,9 +22,9 @@
       "name": "WieczorekAssets",
       "pluginId": "postgres-plugin"
     },
+    "executeOnLoad": true,
     "name": "SelectQuery",
     "pageId": "Owners",
-    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": false,
     "name": "DeleteQuery",
     "pageId": "Dual investment",
-    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

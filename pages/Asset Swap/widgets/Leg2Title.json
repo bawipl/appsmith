@@ -1,10 +1,16 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 4,
   "dynamicBindingPathList": [
     {
+      "key": "truncateButtonColor"
+    },
+    {
       "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -17,13 +23,13 @@
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 7,
+  "originalBottomRow": 4,
   "originalTopRow": 1,
   "overflow": "NONE",
-  "parentId": "leg2-canvas-001",
+  "parentId": "leg2-container-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 42,
+  "rightColumn": 30,
   "shouldTruncate": false,
   "text": "📥 LEG 2: Owner 2 Sends (Return)",
   "textAlign": "LEFT",

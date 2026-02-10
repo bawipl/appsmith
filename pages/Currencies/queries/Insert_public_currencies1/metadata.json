@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": false,
     "name": "Insert_public_currencies1",
     "pageId": "Currencies",
-    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

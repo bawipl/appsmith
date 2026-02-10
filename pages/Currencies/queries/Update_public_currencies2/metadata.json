@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": false,
     "name": "Update_public_currencies2",
     "pageId": "Currencies",
-    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

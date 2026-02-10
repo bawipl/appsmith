@@ -2,15 +2,18 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 58,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
-      "key": "sourceData"
+      "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -34,22 +37,22 @@
   "labelText": "Platform",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 1,
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "onOptionChange": "{{SwapUtils.refreshOwner1Balance()}}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 21,
-  "originalTopRow": 14,
-  "parentId": "leg1-canvas-001",
+  "originalBottomRow": 18,
+  "originalTopRow": 11,
+  "parentId": "0",
   "placeholderText": "Select platform...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 31,
   "serverSideFiltering": false,
   "sourceData": "{{PlatformsQuery.data.map(obj => ({label: obj.name, value: obj.id}))}}",
-  "topRow": 12,
+  "topRow": 51,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "platform1-select-001",

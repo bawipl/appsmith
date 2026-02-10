@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
+    "executeOnLoad": true,
     "name": "OwnersQuery",
     "pageId": "Operation summary",
-    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

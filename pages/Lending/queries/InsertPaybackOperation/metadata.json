@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": false,
     "name": "InsertPaybackOperation",
     "pageId": "Lending",
-    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -6,7 +6,7 @@
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 1130,
+          "bottomRow": 950,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -21,7 +21,7 @@
           "snapRows": 124,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
-          "version": 94,
+          "version": 91,
           "widgetId": "0",
           "widgetName": "MainContainer"
         }

@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 113,
+  "bottomRow": 95,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": false,
   "childStylesheet": {
@@ -15,16 +15,12 @@
     }
   },
   "columnOrder": [
-    "swap_id",
-    "swap_date1",
-    "parties1",
-    "movements1",
-    "operation_count"
+    "swap_date",
+    "parties",
+    "movements"
   ],
-  "columnUpdatedAt": 1770693459993,
   "columnWidthMap": {
     "movements": 500,
-    "movements1": 756,
     "parties": 150,
     "swap_date": 150
   },
@@ -33,24 +29,6 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.parties1.computedValue"
-    },
-    {
-      "key": "primaryColumns.swap_date1.computedValue"
-    },
-    {
-      "key": "primaryColumns.movements1.computedValue"
-    },
-    {
-      "key": "primaryColumns.operation_count.computedValue"
-    },
-    {
-      "key": "primaryColumns.swap_id.computedValue"
-    },
-    {
       "key": "accentColor"
     },
     {
@@ -58,6 +36,18 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.swap_date.computedValue"
+    },
+    {
+      "key": "primaryColumns.parties.computedValue"
+    },
+    {
+      "key": "primaryColumns.movements.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -65,7 +55,6 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
   "enableClientSideSearch": true,
   "horizontalAlignment": "LEFT",
   "isLoading": false,
@@ -77,177 +66,65 @@
   "isVisibleSearch": true,
   "key": "recent-swaps-table",
   "leftColumn": 1,
-  "originalBottomRow": 96,
-  "originalTopRow": 70,
+  "originalBottomRow": 75,
+  "originalTopRow": 49,
   "parentId": "0",
   "primaryColumns": {
-    "movements1": {
+    "movements": {
       "alias": "movements",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = RecentSwapsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"movements\"])) : movements })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
+      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.movements)}}",
       "enableFilter": true,
       "enableSort": true,
-      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "movements1",
-      "index": 3,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "movements",
-      "notation": "standard",
-      "originalId": "movements",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "operation_count": {
-      "alias": "operation_count",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = RecentSwapsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"operation_count\"])) : operation_count })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "operation_count",
-      "index": 4,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "operation_count",
-      "notation": "standard",
-      "originalId": "operation_count",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "parties1": {
-      "alias": "parties",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "html",
-      "computedValue": "{{(() => { const tableData = RecentSwapsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"parties\"])) : parties })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "parties1",
+      "id": "movements",
       "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
       "isEditable": false,
-      "isSaveVisible": true,
       "isVisible": true,
-      "label": "parties",
-      "notation": "standard",
-      "originalId": "parties",
-      "sticky": "",
-      "textColor": "",
+      "label": "Movements",
       "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 150
+      "width": 500
     },
-    "swap_date1": {
-      "alias": "swap_date",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+    "parties": {
+      "alias": "parties",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = RecentSwapsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"swap_date\"])) : swap_date })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
+      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.parties)}}",
       "enableFilter": true,
       "enableSort": true,
-      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "swap_date1",
+      "id": "parties",
       "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
       "isEditable": false,
-      "isSaveVisible": true,
       "isVisible": true,
-      "label": "swap_date",
-      "notation": "standard",
-      "originalId": "swap_date",
-      "sticky": "",
-      "textColor": "",
+      "label": "Parties",
       "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "swap_id": {
-      "alias": "swap_id",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = RecentSwapsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"swap_id\"])) : swap_id })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
+    "swap_date": {
+      "alias": "swap_date",
+      "columnType": "date",
+      "computedValue": "{{RecentSwapsTable.processedTableData.map((row) => row.swap_date)}}",
       "enableFilter": true,
       "enableSort": true,
-      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "swap_id",
+      "id": "swap_date",
       "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
       "isEditable": false,
-      "isSaveVisible": true,
       "isVisible": true,
-      "label": "swap_id",
-      "notation": "standard",
-      "originalId": "swap_id",
-      "sticky": "",
-      "textColor": "",
+      "label": "Date",
+      "outputFormat": "DD/MM/YYYY HH:mm",
       "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     }
@@ -256,9 +133,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "searchKey": "",
-  "tableData": "{{Array.isArray(RecentSwapsQuery.data) ? RecentSwapsQuery.data : []}}",
+  "tableData": "{{RecentSwapsQuery.data}}",
   "textSize": "0.875rem",
-  "topRow": 87,
+  "topRow": 69,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

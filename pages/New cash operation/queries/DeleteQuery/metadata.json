@@ -22,9 +22,9 @@
       "name": "WieczorekAssets",
       "pluginId": "postgres-plugin"
     },
+    "executeOnLoad": false,
     "name": "DeleteQuery",
     "pageId": "New cash operation",
-    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

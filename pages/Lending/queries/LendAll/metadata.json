@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": true,
     "name": "LendAll",
     "pageId": "Lending",
-    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

@@ -7,80 +7,45 @@
   "bottomRow": 41,
   "boxShadow": "none",
   "canFreezeColumn": false,
-  "columnOrder": [
-    "platform",
-    "balance"
-  ],
+  "columnOrder": ["platform", "currencies"],
   "columnWidthMap": {
-    "balance": 100,
-    "platform": 120
+    "platform": 100,
+    "currencies": 280
   },
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": -1,
   "delimiter": ",",
   "dynamicBindingPathList": [
-    {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "isVisible"
-    },
-    {
-      "key": "primaryColumns.platform.computedValue"
-    },
-    {
-      "key": "primaryColumns.balance.computedValue"
-    }
+    {"key": "accentColor"},
+    {"key": "borderRadius"},
+    {"key": "tableData"},
+    {"key": "isVisible"},
+    {"key": "primaryColumns.platform.computedValue"},
+    {"key": "primaryColumns.currencies.computedValue"}
   ],
   "dynamicPropertyPathList": [
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "isVisible"
-    }
+    {"key": "tableData"},
+    {"key": "isVisible"}
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {"key": "onRowSelected"}
+  ],
   "enableClientSideSearch": false,
   "horizontalAlignment": "LEFT",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": "{{Owner2Select.selectedOptionValue && Currency1Select.selectedOptionValue && Array.isArray(Owner2Leg1CurrencyBalances.data) && Owner2Leg1CurrencyBalances.data.length > 0}}",
+  "isVisible": "{{Owner2Select.selectedOptionValue && Array.isArray(Owner2AllBalances.data) && Owner2AllBalances.data.length > 0}}",
   "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": false,
   "isVisibleSearch": true,
   "key": "owner2-leg1-balances-table",
   "leftColumn": 30,
+  "onRowSelected": "{{(async () => {\n  const row = Owner2Leg1BalancesTable.selectedRow;\n  if (row && row.platform_id) {\n    // Parse the first currency from currencyData\n    const currencies = JSON.parse(row.currencyData || '[]');\n    if (currencies.length > 0) {\n      await SwapUtils.onBalanceClick(row.platform_id, row.platform, currencies[0].currency_id);\n    }\n  }\n})()}}",
   "originalBottomRow": 41,
   "originalTopRow": 7,
   "parentId": "leg2-canvas-001",
   "primaryColumns": {
-    "balance": {
-      "alias": "balance",
-      "columnType": "text",
-      "computedValue": "{{Owner2Leg1BalancesTable.processedTableData.map((row) => row.balance)}}",
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "RIGHT",
-      "id": "balance",
-      "index": 1,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isEditable": false,
-      "isVisible": true,
-      "label": "Balance",
-      "textSize": "0.75rem",
-      "verticalAlignment": "CENTER",
-      "width": 100
-    },
     "platform": {
       "alias": "platform",
       "columnType": "text",
@@ -98,14 +63,33 @@
       "label": "Platform",
       "textSize": "0.75rem",
       "verticalAlignment": "CENTER",
-      "width": 120
+      "width": 100
+    },
+    "currencies": {
+      "alias": "currencies",
+      "columnType": "text",
+      "computedValue": "{{Owner2Leg1BalancesTable.processedTableData.map((row) => row.currencies)}}",
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "currencies",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Currencies",
+      "textSize": "0.75rem",
+      "verticalAlignment": "CENTER",
+      "width": 280
     }
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "searchKey": "",
-  "tableData": "{{SwapUtils.getOwner2Leg1BalancesFormatted()}}",
+  "tableData": "{{SwapUtils.getOwner2AllBalancesGrouped()}}",
   "textSize": "0.75rem",
   "topRow": 7,
   "totalRecordsCount": 0,

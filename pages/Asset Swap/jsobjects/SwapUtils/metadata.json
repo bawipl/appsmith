@@ -2,6 +2,130 @@
   "gitSyncId": "67a2400b3e12e107acd1a186_asset-swap-utils",
   "id": "Asset Swap_SwapUtils",
   "unpublishedCollection": {
+    "actions": [
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "formatBalance",
+        "name": "formatBalance"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "extractCurrencyShortcode",
+        "name": "extractCurrencyShortcode"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": true,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "refreshOwner1Balance",
+        "name": "refreshOwner1Balance"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": true,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "refreshOwner2Balance",
+        "name": "refreshOwner2Balance"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": true,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "refreshOwner2AllBalances",
+        "name": "refreshOwner2AllBalances"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "getCurrency1Options",
+        "name": "getCurrency1Options"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "getCurrency2Options",
+        "name": "getCurrency2Options"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "getOwner2AllBalancesGrouped",
+        "name": "getOwner2AllBalancesGrouped"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": true,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "onBalanceClick",
+        "name": "onBalanceClick"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": false,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "getSwapSummary",
+        "name": "getSwapSummary"
+      },
+      {
+        "actionConfiguration": {
+          "body": "",
+          "isAsync": true,
+          "timeoutInMillisecond": 10000
+        },
+        "clientSideExecution": true,
+        "executeOnLoad": false,
+        "id": "executeSwapWithValidation",
+        "name": "executeSwapWithValidation"
+      }
+    ],
+    "body": "",
     "name": "SwapUtils",
     "pageId": "Asset Swap",
     "pluginId": "js-plugin",

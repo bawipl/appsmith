@@ -8,6 +8,26 @@ export default {
     return Number(balance).toFixed(decimals);
   },
 
+  // Extract just the currency shortcode from a label like "100.00 USDT (ETH)" or "USDT (ETH)"
+  extractCurrencyShortcode(label) {
+    if (!label) return '?';
+    // If label contains a number at the start (balance format), extract currency after it
+    // Format: "100.00 USDT (ETH)" -> "USDT"
+    // Format: "USDT (ETH)" -> "USDT"
+    const parts = label.trim().split(' ');
+    if (parts.length >= 2) {
+      // Check if first part is a number (balance)
+      if (!isNaN(parseFloat(parts[0]))) {
+        // Balance format: "100.00 USDT (ETH)"
+        return parts[1];
+      } else {
+        // Simple format: "USDT (ETH)" or just "USDT"
+        return parts[0].replace(/\(.*\)/, '').trim();
+      }
+    }
+    return label.split('(')[0].trim();
+  },
+
   // Refresh Owner1 balance when owner or platform changes
   async refreshOwner1Balance() {
     if (Owner1Select.selectedOptionValue && Platform1Select.selectedOptionValue) {
@@ -20,16 +40,16 @@ export default {
     if (Owner2Select.selectedOptionValue && Platform2Select.selectedOptionValue) {
       await Owner2BalanceQuery.run();
     }
-    // Also refresh Owner2's balances for Leg1 currency
-    if (Owner2Select.selectedOptionValue && Currency1Select.selectedOptionValue) {
-      await Owner2Leg1CurrencyBalances.run();
+    // Also refresh Owner2's all balances
+    if (Owner2Select.selectedOptionValue) {
+      await Owner2AllBalances.run();
     }
   },
 
-  // Refresh Owner2's Leg1 currency balances when currency1 or owner2 changes
-  async refreshOwner2Leg1Balances() {
-    if (Owner2Select.selectedOptionValue && Currency1Select.selectedOptionValue) {
-      await Owner2Leg1CurrencyBalances.run();
+  // Refresh Owner2's all balances when owner2 changes
+  async refreshOwner2AllBalances() {
+    if (Owner2Select.selectedOptionValue) {
+      await Owner2AllBalances.run();
     }
   },
 
@@ -77,30 +97,65 @@ export default {
     });
   },
 
-  // Get Owner2's Leg1 currency balances formatted for display
-  getOwner2Leg1BalancesFormatted() {
-    const data = Owner2Leg1CurrencyBalances.data;
+  // Get Owner2's all balances grouped by platform for table display
+  // Format: Platform | Currencies (clickable)
+  // binance | USD(100),USDT(2000),BTC(0.134)
+  getOwner2AllBalancesGrouped() {
+    const data = Owner2AllBalances.data;
     if (!Array.isArray(data) || data.length === 0) return [];
     
-    // Get currency info for formatting
-    const currency1Label = Currency1Select.selectedOptionLabel || '';
-    const currencyCode = currency1Label.split(' ')[1] || currency1Label.split('(')[0]?.trim() || '';
-    const decimals = (currencyCode === 'BTC' || currencyCode === 'ETH') ? 8 : 2;
+    // Group by platform
+    const grouped = {};
+    data.forEach(row => {
+      const platformKey = row.platform_id + '|' + row.platform;
+      if (!grouped[platformKey]) {
+        grouped[platformKey] = {
+          platform_id: row.platform_id,
+          platform: row.platform,
+          currencies: []
+        };
+      }
+      const decimals = (row.currency === 'BTC' || row.currency === 'ETH') ? 8 : 2;
+      const formattedBalance = Number(row.balance).toFixed(decimals);
+      grouped[platformKey].currencies.push({
+        currency_id: row.currency_id,
+        currency: row.currency,
+        balance: formattedBalance,
+        display: row.currency + '(' + formattedBalance + ')'
+      });
+    });
     
-    return data.map(row => ({
-      platform: row.platform,
-      balance: Number(row.balance).toFixed(decimals)
+    // Convert to array format for table
+    return Object.values(grouped).map(g => ({
+      platform_id: g.platform_id,
+      platform: g.platform,
+      currencies: g.currencies.map(c => c.display).join(', '),
+      currencyData: JSON.stringify(g.currencies) // Store raw data for click handling
     }));
   },
 
-  // Get swap summary text
+  // Handle click on a currency in the balances table
+  async onBalanceClick(platformId, platformName, currencyId) {
+    // Set Platform2Select value
+    await Platform2Select.setValue(platformId);
+    // Refresh currency options for the new platform
+    await Owner2BalanceQuery.run();
+    // Set Currency2Select value
+    await Currency2Select.setValue(currencyId);
+  },
+
+  // Get swap summary text - now using just currency shortcodes
   getSwapSummary() {
     const owner1 = Owner1Select.selectedOptionLabel || '?';
     const owner2 = Owner2Select.selectedOptionLabel || '?';
     const amount1 = Amount1Input.text || '0';
     const amount2 = Amount2Input.text || '0';
-    const currency1 = Currency1Select.selectedOptionLabel || '?';
-    const currency2 = Currency2Select.selectedOptionLabel || '?';
+    
+    // Extract just the currency shortcode from the full label
+    const currency1Full = Currency1Select.selectedOptionLabel || '?';
+    const currency2Full = Currency2Select.selectedOptionLabel || '?';
+    const currency1 = this.extractCurrencyShortcode(currency1Full);
+    const currency2 = this.extractCurrencyShortcode(currency2Full);
     
     if (!Owner1Select.selectedOptionValue || !Owner2Select.selectedOptionValue) {
       return 'Select both owners to see swap summary';
@@ -112,10 +167,10 @@ export default {
     const amt2 = parseFloat(amount2) || 0;
     if (amt1 > 0 && amt2 > 0) {
       const rate = (amt2 / amt1).toFixed(8);
-      rateInfo = `\n📊 Rate: 1 ${currency1.split(' ')[0] || currency1} = ${rate} ${currency2.split(' ')[0] || currency2}`;
+      rateInfo = '\n📊 Rate: 1 ' + currency1 + ' = ' + rate + ' ' + currency2;
     }
     
-    return `📤 ${owner1} sends ${amount1} ${currency1}\n📥 ${owner2} sends ${amount2} ${currency2}${rateInfo}`;
+    return '📤 ' + owner1 + ' sends ' + amount1 + ' ' + currency1 + '\n📥 ' + owner2 + ' sends ' + amount2 + ' ' + currency2 + rateInfo;
   },
 
   // Validate and execute swap

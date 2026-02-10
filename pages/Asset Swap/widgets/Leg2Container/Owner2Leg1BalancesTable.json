@@ -74,8 +74,8 @@
   "key": "owner2-leg1-balances-table",
   "leftColumn": 0,
   "onRowSelected": "{{(async () => {\n  const row = Owner2Leg1BalancesTable.selectedRow;\n  if (row && row.platform_id) {\n    // Parse the first currency from currencyData\n    const currencies = JSON.parse(row.currencyData || '[]');\n    if (currencies.length > 0) {\n      await SwapUtils.onBalanceClick(row.platform_id, row.platform, currencies[0].currency_id);\n    }\n  }\n})()}}",
-  "originalBottomRow": 41,
-  "originalTopRow": 7,
+  "originalBottomRow": 66,
+  "originalTopRow": 30,
   "parentId": "leg2-canvas-001",
   "primaryColumns": {
     "currencies1": {

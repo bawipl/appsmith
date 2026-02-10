@@ -69,7 +69,7 @@ export default {
       const decimals = (b.currency === 'BTC' || b.currency === 'ETH') ? 8 : 2;
       const formattedBalance = Number(b.balance).toFixed(decimals);
       return {
-        label: formattedBalance + ' ' + b.currency + ' (' + (b.blockchain || '') + ')',
+        label: b.currency + ' ' + formattedBalance +   ' (' + (b.blockchain || '') + ')',
         value: b.currency_id
       };
     });
@@ -150,7 +150,9 @@ export default {
     const owner2 = Owner2Select.selectedOptionLabel || '?';
     const amount1 = Amount1Input.text || '0';
     const amount2 = Amount2Input.text || '0';
-    
+		const platform1 = Platform1Select.selectedOptionLabel || '?';
+    const platform2 = Platform2Select.selectedOptionLabel || '?';
+
     // Extract just the currency shortcode from the full label
     const currency1Full = Currency1Select.selectedOptionLabel || '?';
     const currency2Full = Currency2Select.selectedOptionLabel || '?';
@@ -170,7 +172,7 @@ export default {
       rateInfo = '\n📊 Rate: 1 ' + currency1 + ' = ' + rate + ' ' + currency2;
     }
     
-    return '📤 ' + owner1 + ' sends ' + amount1 + ' ' + currency1 + '\n📥 ' + owner2 + ' sends ' + amount2 + ' ' + currency2 + rateInfo;
+    return '📤 ' + owner1 + ' sends ' + amount1 + ' ' + currency1 +' on '+ platform1+ ' ' + '\n📥 ' + owner2 + ' sends ' + amount2 + ' ' + currency2 +' on '+ platform2+ ' '+ rateInfo;
   },
 
   // Validate and execute swap

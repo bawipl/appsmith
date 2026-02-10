@@ -77,8 +77,8 @@
   "isVisibleSearch": true,
   "key": "recent-swaps-table",
   "leftColumn": 1,
-  "originalBottomRow": 96,
-  "originalTopRow": 70,
+  "originalBottomRow": 112,
+  "originalTopRow": 86,
   "parentId": "0",
   "primaryColumns": {
     "movements1": {

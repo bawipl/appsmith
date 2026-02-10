@@ -2,18 +2,15 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 58,
+  "bottomRow": 26,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -21,40 +18,34 @@
       "key": "sourceData"
     }
   ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onOptionChange"
-    }
-  ],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
   "isRequired": true,
   "isVisible": true,
-  "key": "owner2-select",
+  "key": "currency2-select",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Owner 2 (Receiver of Leg 1)",
+  "labelText": "Currency to Send",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 35,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "onOptionChange": "{{SwapUtils.refreshOwner2Balance()}}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 11,
-  "originalTopRow": 4,
-  "parentId": "0",
-  "placeholderText": "Select owner...",
+  "originalBottomRow": 28,
+  "originalTopRow": 21,
+  "parentId": "leg2-canvas-001",
+  "placeholderText": "Select currency...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 13,
   "serverSideFiltering": false,
-  "sourceData": "{{OwnersQuery.data.map(obj => ({label: obj.owner + ' - ' + obj.description, value: obj.owner}))}}",
-  "topRow": 51,
+  "sourceData": "{{SwapUtils.getCurrency2Options()}}",
+  "topRow": 19,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "owner2-select-001",
-  "widgetName": "Owner2Select"
+  "widgetId": "currency2-select-001",
+  "widgetName": "Currency2Select"
 }

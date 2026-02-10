@@ -1,43 +1,45 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
     {
-      "key": "truncateButtonColor"
+      "key": "isVisible"
     },
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.125rem",
+  "fontSize": "0.75rem",
   "fontStyle": "BOLD",
   "isLoading": false,
-  "isVisible": true,
-  "key": "leg1-title",
-  "leftColumn": 1,
+  "isVisible": "{{Owner2Select.selectedOptionValue && Array.isArray(Owner2AllBalances.data) && Owner2AllBalances.data.length > 0}}",
+  "key": "owner2-leg1-balances-label",
+  "leftColumn": 42,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 4,
+  "originalBottomRow": 5,
   "originalTopRow": 1,
   "overflow": "NONE",
-  "parentId": "leg1-container-001",
+  "parentId": "leg2-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 64,
   "shouldTruncate": false,
-  "text": "📤 LEG 1: Owner 1 Sends",
+  "text": "Owner 2 All Balances (click row to select):",
   "textAlign": "LEFT",
-  "textColor": "#1565C0",
+  "textColor": "#E65100",
   "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "leg1-title-001",
-  "widgetName": "Leg1Title"
+  "widgetId": "owner2-leg1-balances-label-001",
+  "widgetName": "Owner2Leg1BalancesLabel"
 }

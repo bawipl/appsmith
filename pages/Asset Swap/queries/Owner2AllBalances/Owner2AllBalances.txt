@@ -1,0 +1,14 @@
+SELECT 
+  p.id AS platform_id,
+  p.name AS platform,
+  c."ID" AS currency_id,
+  c.shortcode AS currency,
+  c.blockchain,
+  SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) AS balance
+FROM cashoperations co
+JOIN currencies c ON c."ID" = co.currency_id
+JOIN platforms p ON p.id = co.platform_id
+WHERE co.owner_id = {{Owner2Select.selectedOptionValue || 'XXXXX'}}
+GROUP BY p.id, p.name, c."ID", c.shortcode, c.blockchain
+HAVING SUM(CASE WHEN co.direction = 'in' THEN co.amount ELSE -co.amount END) > 0
+ORDER BY p.name, c.shortcode;

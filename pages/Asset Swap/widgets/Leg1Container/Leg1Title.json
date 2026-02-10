@@ -1,44 +1,37 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#E8F5E9",
-  "borderColor": "#4CAF50",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "2",
-  "bottomRow": 83,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 5,
   "dynamicBindingPathList": [
-    {
-      "key": "text"
-    },
     {
       "key": "fontFamily"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1rem",
+  "fontSize": "1.125rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "swap-summary",
+  "key": "leg1-title",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
-  "minDynamicHeight": 6,
-  "originalBottomRow": 66,
-  "originalTopRow": 60,
+  "minDynamicHeight": 4,
+  "originalBottomRow": 7,
+  "originalTopRow": 1,
   "overflow": "NONE",
-  "parentId": "0",
+  "parentId": "leg1-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 50,
+  "rightColumn": 57,
   "shouldTruncate": false,
-  "text": "{{SwapUtils.getSwapSummary()}}",
+  "text": "📤 LEG 1: Owner 1 Sends",
   "textAlign": "LEFT",
-  "textColor": "#2E7D32",
-  "topRow": 76,
+  "textColor": "#1565C0",
+  "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "swap-summary-001",
-  "widgetName": "SwapSummary"
+  "widgetId": "leg1-title-001",
+  "widgetName": "Leg1Title"
 }

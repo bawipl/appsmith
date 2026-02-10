@@ -1,0 +1,64 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#FFF3E0",
+  "borderColor": "#E65100",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 76,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "0px",
+      "bottomRow": 690,
+      "boxShadow": "none",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [],
+      "dynamicTriggerPathList": [],
+      "isLoading": false,
+      "isVisible": true,
+      "leftColumn": 0,
+      "minHeight": 280,
+      "parentColumnSpace": 1,
+      "parentId": "leg2-container-001",
+      "parentRowSpace": 1,
+      "rightColumn": 300,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "leg2-canvas-001",
+      "widgetName": "Leg2Canvas"
+    }
+  ],
+  "containerStyle": "card",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 19,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minHeight": 280,
+  "originalBottomRow": 35,
+  "originalTopRow": 7,
+  "parentColumnSpace": 16,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldScrollContents": false,
+  "topRow": 7,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "leg2-container-001",
+  "widgetName": "Leg2Container"
+}

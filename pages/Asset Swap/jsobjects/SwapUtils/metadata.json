@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "67a2400b3e12e107acd1a186_asset-swap-utils",
+  "id": "Asset Swap_SwapUtils",
+  "unpublishedCollection": {
+    "name": "SwapUtils",
+    "pageId": "Asset Swap",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

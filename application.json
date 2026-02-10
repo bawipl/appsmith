@@ -10,7 +10,7 @@
     "navigationSetting": {
       "colorStyle": "theme",
       "logoAssetId": "",
-      "logoConfiguration": "logoOnly",
+      "logoConfiguration": "logoAndApplicationTitle",
       "navStyle": "inline",
       "orientation": "top",
       "position": "static",
@@ -84,7 +84,7 @@
     "navigationSetting": {
       "colorStyle": "theme",
       "logoAssetId": "",
-      "logoConfiguration": "logoOnly",
+      "logoConfiguration": "logoAndApplicationTitle",
       "navStyle": "inline",
       "orientation": "top",
       "position": "static",

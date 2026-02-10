@@ -2,18 +2,15 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 68,
+  "bottomRow": 12,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -37,22 +34,22 @@
   "labelText": "Owner 1 (Sender)",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 2,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "onOptionChange": "{{SwapUtils.refreshOwner1Balance()}}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 11,
-  "originalTopRow": 4,
-  "parentId": "0",
+  "originalBottomRow": 14,
+  "originalTopRow": 7,
+  "parentId": "leg1-canvas-001",
   "placeholderText": "Select owner...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 31,
+  "rightColumn": 30,
   "serverSideFiltering": false,
-  "sourceData": "{{OwnersQuery.data.map(obj => ({label: obj.owner + ' - ' + obj.description, value: obj.owner}))}}",
-  "topRow": 61,
+  "sourceData": "{{OwnersQuery.data.map(obj => ({label: obj.owner , value: obj.owner}))}}",
+  "topRow": 5,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "owner1-select-001",

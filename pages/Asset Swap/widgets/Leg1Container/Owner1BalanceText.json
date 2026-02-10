@@ -1,19 +1,13 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 30,
   "dynamicBindingPathList": [
     {
-      "key": "truncateButtonColor"
+      "key": "text"
     },
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -22,25 +16,25 @@
   "fontStyle": "ITALIC",
   "isLoading": false,
   "isVisible": true,
-  "key": "owner2-balance",
+  "key": "owner1-balance",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 28,
-  "originalTopRow": 25,
+  "originalBottomRow": 32,
+  "originalTopRow": 28,
   "overflow": "NONE",
-  "parentId": "leg2-container-001",
+  "parentId": "leg1-canvas-001",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldTruncate": false,
-  "text": "{{Owner2BalanceQuery.data && Owner2BalanceQuery.data.length > 0 ? 'Available: ' + Owner2BalanceQuery.data.map(b => b.currency + ': ' + Number(b.balance).toLocaleString()).join(', ') : 'Select owner and platform to see balances'}}",
+  "text": "{{Array.isArray(Owner1BalanceQuery.data) && Owner1BalanceQuery.data.length > 0 ? 'Available: ' + Owner1BalanceQuery.data.map(b => b.currency + ': ' + Number(b.balance).toLocaleString()).join(', ') : 'Select owner and platform to see balances'}}",
   "textAlign": "LEFT",
   "textColor": "#666666",
-  "topRow": 25,
+  "topRow": 26,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "owner2-balance-001",
-  "widgetName": "Owner2BalanceText"
+  "widgetId": "owner1-balance-001",
+  "widgetName": "Owner1BalanceText"
 }

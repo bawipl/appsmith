@@ -2,23 +2,25 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 25,
+  "bottomRow": 26,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
     }
   ],
   "isDisabled": false,
@@ -35,18 +37,19 @@
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
+  "onOptionChange": "{{SwapUtils.refreshOwner2Leg1Balances()}}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 25,
-  "originalTopRow": 18,
-  "parentId": "leg1-container-001",
+  "originalBottomRow": 28,
+  "originalTopRow": 21,
+  "parentId": "leg1-canvas-001",
   "placeholderText": "Select currency...",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 18,
   "serverSideFiltering": false,
-  "sourceData": "{{CurrenciesQuery.data.map(obj => ({label: obj.shortcode + ' (' + obj.blockchain + ')', value: obj.ID}))}}",
-  "topRow": 18,
+  "sourceData": "{{SwapUtils.getCurrency1Options()}}",
+  "topRow": 19,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "currency1-select-001",

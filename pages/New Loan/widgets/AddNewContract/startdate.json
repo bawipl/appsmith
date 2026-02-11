@@ -17,16 +17,7 @@
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onDateSelected"
-    }
-  ],
-  "onDateSelected": "{{if (duration_months.selectedOptionValue) {
-    const calculatedEnd = LoanDurationObject.calculateEndDate(startdate.formattedValue, duration_months.selectedOptionValue);
-    enddate.setDefaultDate(calculatedEnd);
-    enddate.resetChildrenMeta();
-  }}}",
+  "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
@@ -54,7 +45,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 16,
+  "rightColumn": 22,
   "shortcuts": false,
   "timePrecision": "minute",
   "topRow": 35,

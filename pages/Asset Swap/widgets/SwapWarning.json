@@ -4,7 +4,7 @@
   "borderColor": "{{SwapUtils.getWarningBorderColor()}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "2",
-  "bottomRow": 75,
+  "bottomRow": 76,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "dynamicBindingPathList": [
     {
@@ -42,7 +42,7 @@
   "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 50,
+  "rightColumn": 18,
   "shouldTruncate": false,
   "text": "{{SwapUtils.getWarningText()}}",
   "textAlign": "CENTER",

@@ -1,0 +1,9 @@
+{
+  "name": "LoanDurationObject",
+  "pluginType": "JS",
+  "entityType": "JSACTION",
+  "actionIds": [],
+  "archivedActionIds": [],
+  "variables": [],
+  "url": "pages/New Loan/jsobjects/LoanDurationObject/LoanDurationObject.js"
+}

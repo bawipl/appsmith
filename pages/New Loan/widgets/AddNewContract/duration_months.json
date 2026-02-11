@@ -4,62 +4,67 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 42,
   "boxShadow": "none",
-  "closeOnSelection": true,
-  "dateFormat": "YYYY-MM-DD HH:mm",
-  "datePickerType": "DATE_PICKER",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [
+  "dynamicPropertyPathList": [
     {
-      "key": "onDateSelected"
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
     }
   ],
-  "onDateSelected": "{{if (duration_months.selectedOptionValue) {
-    const calculatedEnd = LoanDurationObject.calculateEndDate(startdate.formattedValue, duration_months.selectedOptionValue);
-    enddate.setDefaultDate(calculatedEnd);
-    enddate.resetChildrenMeta();
-  }}}",
-  "firstDayOfWeek": 0,
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
   "isDisabled": false,
+  "isFilterable": false,
   "isLoading": false,
-  "isRequired": true,
+  "isRequired": false,
   "isVisible": true,
-  "key": "bejr0gz38l",
-  "label": "Start date",
+  "key": "duration_select_widget",
   "labelAlignment": "left",
   "labelPosition": "Top",
+  "labelText": "Duration",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 2,
-  "maxDate": "2121-12-31T18:29:00.000Z",
+  "leftColumn": 16,
   "maxDynamicHeight": 9000,
-  "minDate": "1920-12-31T18:30:00.000Z",
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 40,
-  "mobileLeftColumn": 2,
-  "mobileRightColumn": 22,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
   "mobileTopRow": 33,
   "needsErrorInfo": false,
+  "onOptionChange": "{{enddate.setDefaultDate(LoanDurationObject.getCalculatedEndDate()); enddate.resetChildrenMeta();}}",
+  "optionLabel": "label",
+  "optionValue": "value",
   "parentColumnSpace": 17.2421875,
   "parentId": "wojc9y9xnt",
   "parentRowSpace": 10,
+  "placeholderText": "Select months",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 16,
-  "shortcuts": false,
-  "timePrecision": "minute",
+  "rightColumn": 22,
+  "serverSideFiltering": false,
+  "sourceData": "{{LoanDurationObject.getDurationOptions()}}",
   "topRow": 35,
-  "type": "DATE_PICKER_WIDGET2",
-  "version": 2,
-  "widgetId": "7zl35h0nmr",
-  "widgetName": "startdate"
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "duration_widget_001",
+  "widgetName": "duration_months"
 }
